@@ -1,384 +1,575 @@
+<!--|===================================================================
+|Author: Abdel Ahadouch <abdel.ahadouch@mi8.be>
+        Copyright (c) 2016 mobile inception
+|=======================================================================|-->
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!--|Title of Site|-->
+  <title>Mi8 - Mobile Inception</title>
+<!--|===================================================================
+|Fonts
+|=======================================================================|-->
+  <!--|Google Font(Open Sans)|-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=greek'
+        rel='stylesheet'
+        type='text/css'>
 
-    <head>
-        
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mi8 - Enabling the #mobileenterprise</title>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700italic'
+        rel='stylesheet'
+        type='text/css'>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,700,700italic">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/ultimate-flat-social-icons/ultm-css/ultm.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
+  <link href='https://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext'
+        rel='stylesheet'
+        type='text/css'>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400italic,300italic,400,300'
+        rel='stylesheet'
+        type='text/css'>
+<!--|===================================================================
+|CSS
+|=======================================================================|-->
+  <!--|Font Icon(Ionicons)|-->
+  <link href='assets/css/ionicons.css' rel='stylesheet' type='text/css'>
+  <!--|Vegas|-->
+  <link href="assets/css/vegas.min.css" rel="stylesheet" type="text/css">
+  <!--|Magnific Popup|-->
+  <link href="assets/css/magnific-popup.css" rel="stylesheet" type="text/css">
+  <!--|Owl Carousel|-->
+  <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+  <!--|Bootstrap|-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <!--|Site Stylesheet|-->
+  <link href="assets/css/style_orange.css" rel="stylesheet" type="text/css">
+  <!--|SLIDER Stylesheet|-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css" />
+<!--|===================================================================
+|ICONS
+|=======================================================================|-->
+  <!--|Favicon|-->
+  <link rel="icon" href="assets/images/favicon.ico">
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+</head>
 
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    </head>
 
-    <body>
 
-		<!-- Top menu -->
-		<!--<nav>
-			<a class="menu-top" href="">Top</a>
-			<a class="menu-subscribe" href="">Subscribe</a>
-			<a class="menu-project" href="">The project</a>
-			<a class="menu-testimonials" href="">Testimonials</a>
-			<a class="menu-about-us" href="">About us</a>
-			<a class="menu-contact" href="">Contact</a>
-			<div class="hide-menu">
-				<a href="" rel="tooltip" data-placement="bottom" data-original-title="Hide menu">
-					<i class="fa fa-bars"></i>
-				</a>
-			</div>
-		</nav>
-		<div class="show-menu">
-			<a href="" rel="tooltip" data-placement="bottom" data-original-title="Show menu">
-				<i class="fa fa-bars"></i>
-			</a>
-		</div>
-		-->
-        <!-- Coming Soon -->
-        <div class="coming-soon">
-            <div class="inner-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                        	<div class="logo">
-                        		<h1><a href="">mi8 - Enabling the #mobileenterprise </a></h1>
-                        	</div>
-			    <h1>mi8 - Enabling the #mobileEnterprise</h1>
-                            <h3>We're coming back soon</h3>
-                            <p>
-                            	We are working on the new version of our site. 
-                            	It will bring some new features. Stay tuned!
-                            </p>
-			    <!--
-                            <div class="timer">
-                                <div class="days-wrapper">
-                                    <span class="days"></span> <br>days
-                                </div>
-                                <div class="hours-wrapper">
-                                    <span class="hours"></span> <br>hours
-                                </div>
-                                <div class="minutes-wrapper">
-                                    <span class="minutes"></span> <br>minutes
-                                </div>
-                                <div class="seconds-wrapper">
-                                    <span class="seconds"></span> <br>seconds
-                                </div>
-                            </div>
-			    -->
-                            <p class="top-arrow">
-                            	<i class="fa fa-chevron-down"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Subscription form -->
-	<!--
+
+
+
+
+<body id="page">
+
+	<!--||Off Canvas||-->
+	<!-- <div class="off-canvas">
+	  <div class="off-canvas-inner">
+	    <div class="sidebar-logo"><img src="assets/images/logo_light.png" alt=""></div>
+
+	    <div class="fp-navbar scrollspy">
+	      <ul class="nav">
+	        <li><a href="#header">Home</a></li>
+	        <li><a href="#Tailored">Tailored digital</a></li>
+	        <li><a href="#Operational">Operational agility</a></li>
+	        <li><a href="#Clients">Our clients</a></li>
+	        <li><a href="#Expertise">Expertise & Consulting</a></li>
+	        <li><a href="#footer">Contact</a></li>
+	      </ul>
+	    </div>
+
+	    <div class="social-links brand-color">
+	      <p>Follow Us</p>
+	      <a class="twitter" href="https://twitter.com/mobileInception" target="_blank"><i class="ion-social-twitter"></i></a>
+	      <a class="linkedin" href="https://www.linkedin.com/company/mobile-inception---mi8?trk=company_logo" target="_blank"><i class="ion-social-linkedin"></i></a>
+	    </div>
+	  </div>
+	  <a class="fp-close" href="#"><i class="ion-close"></i></a>
+	</div> -->
+	<!--||End Off Canvas||-->
+
+	<!-- <div class="wrapper"> -->
+	<!--|Overlay|-->
+	<!-- <div class="canvas-overlay"></div> -->
+	<!--|End Overlay|-->
+
+  <!--|===================================================================
+  |Top Bar
+  |=======================================================================|-->
+	  <div class="top-bar">
+	    <div class="container">
+	      <div class="top-bar-logo">
+	        <a href="index.html">
+	          <img class="logo-light" src="assets/images/logo_dark_vertical@X2.png" alt="">
+	        </a>
+	      </div>
+   <!-- <div class="pull-right">
+	        <div class="sign-wrap">
+	      	</div>
+	      	<a class="toggle-btn" href="#"><i class="ion-navicon custom-icon"></i></a>
+	    	</div> -->
+	  </div>
+	</div>
+	<!--||End Top Bar||-->
+  <!--|===================================================================
+  |Header
+  |=======================================================================|-->
+  <header id="header" class="fp-header">
+    <div class="overlay-inner">
+      <div class="header-content">
+          <!-- <h1 class="head-title">Is your company still stuck in an analog world ?</h1> -->
+        <ul class="slideshow">
+          <li><span>Image 01</span></li>
+          <li><span>Image 02</span></li>
+          <li><span>Image 03</span></li>
+          <li><span>Image 04</span></li>
+          <li><span>Image 05</span></li>
+          <li><span>Image 06</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!--||End Header||-->
+  <!--|===================================================================
+  |Slogan
+  |=======================================================================|-->
+<!-- scroll fixe -->
+  <div class="clients" id="topfixescroll" >
+    <div class="container">
+      <div class="client-wrapper">
+      <div class="col-xs-12 col-sm-2 col-lg-2"></div>
+          <div class="col-xs-12 col-sm-8 col-lg-8">
+    			<p class="client"><span>“ </span>Hi, we're mi8. We design & build enterprise solutions for a digital world<span> „</span></p>
+    		  </div>
+        <div class="col-xs-12 col-sm-8 col-lg-8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--||End Clients||-->
+  <!--|===================================================================
+  |Tailored digital solutions
+  |=======================================================================|-->
+<!--|Promo Section|-->
+     <section id="Tailored" class="section section-bg">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 subscribe">
-                    <h3>Subscribe to our newsletter</h3>
-                    <p>Sign up now to our newsletter and you'll be one of the first to know when the site is ready:</p>                    
-                    <form class="form-inline" role="form" action="assets/subscribe.php" method="post">
-	                	<div class="form-group">
-	                		<label class="sr-only" for="subscribe-email">Email address</label>
-	                    	<input type="text" name="email" placeholder="Enter your email..." class="subscribe-email form-control" id="subscribe-email">
-	                    </div>
-	                    <button type="submit" class="btn">Subscribe</button>
-	                </form>                    
-                    <div class="success-message"></div>
-                    <div class="error-message"></div>
-                </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="feature-img">
+                <img src="assets/images/pic04.jpg" alt="">
+              </div>
             </div>
+            <div class="col-md-6">
+              <!--|Section Header|-->
+              <header class="section-header">
+                <h2 class="section-title"><span>Tailored</span> digital solutions</h2>
+                <p class="legal">We design end-to-end digital solutions to boost your business’ operations in innovative ways, reduce costs & surface new opportunities. Our solutions are typically composed of mobile enterprise apps, cloud infrastructure & internet of things technologies, with refreshing touch-based user interfaces. We strive for the best quality by following leading software engineering & quality assurance practices.</p>
+              </header> <!--|End Section Header|-->
+            </div>
+          </div>
         </div>
-	-->
-        <!-- About the new site -->
-	<!--
-        <div class="about-container">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-sm-12 about">
-	                    <h3>About the new site</h3>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-	                    </p>
-	                </div>
+     </section>
+  <!--|===================================================================
+  |Operational agility inside
+  |=======================================================================|-->
+  <div id="Operational">
+    <!--|Promo Section|-->
+    <div class="promo-section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+              <h2 class="section-title"> <span></span></h2>
+	            <div class="promo-text">
+	                <header class="section-header">
+            			<h2 class="section-title">Operational <span>agility</span> inside</h2>
+              			<!-- <hr class="fp-hr"> -->
+              			<p class="legal">We build solutions with a focus on operations. We love operations. Our solutions are fully instrumented to track & trace every business operation performed on the field, in store or in the warehouse by your collaborators. From those operational analytics, we surface valuable insights and generate rapid calls to action, to mitigate impediments or capture newfound opportunities.</p>
+	              </header>
 	            </div>
-	            <div class="row">
-	                <div class="col-sm-4 about-box-1">
-	                	<div class="about-box-1-icon">
-	                		<i class="fa fa-eye"></i>
-	                	</div>
-	                    <h4>New Features</h4>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	                <div class="col-sm-4 about-box-1">
-	                	<div class="about-box-1-icon">
-	                		<i class="fa fa-table"></i>
-	                	</div>
-	                    <h4>Responsive Layout</h4>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	                <div class="col-sm-4 about-box-1">
-	                	<div class="about-box-1-icon">
-	                		<i class="fa fa-pencil"></i>
-	                	</div>
-	                    <h4>Flat Design</h4>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	            </div>
-	        </div>
+          </div>
+          <div class="col-md-6">
+            <div class="block-image">
+              <img src="assets/images/pic01.jpg" alt="">
+            </div>
+          </div>
         </div>
-	-->
-        <!-- Testimonials -->
-	<!--
+      </div>
+    </div>
+  <!--|===================================================================
+  |Our priority : your success
+  |=======================================================================|-->
+<section id="Tailored" class="section section-bg">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 testimonials">
-                    <h3>What our clients say</h3>
-                    <div class="testimonial-active"></div>
-                    <div class="testimonial-quote">&ldquo; &rdquo;</div>
-                    <div class="testimonial-single">
-                    	<p>
-                    		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                    		lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, 
-                    		quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
-                    		<br>
-                    		<a href="">John Doe, johndoe.com</a>
-                    	</p>
-                    	<div class="testimonial-single-image">
-                    		<img src="assets/img/testimonials/1.jpg" alt="">
-                    	</div>
-                    </div>
-                    <div class="testimonial-single">
-                    	<p>
-                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                    		ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-                    		incididunt ut labore et. Lorem ipsum dolor sit amet.
-                    		<br>
-                    		<a href="">Jane Jonsson, blog.jane.com</a>
-                    	</p>
-                    	<div class="testimonial-single-image">
-                    		<img src="assets/img/testimonials/2.jpg" alt="">
-                    	</div>
-                    </div>
-                    <div class="testimonial-single">
-                    	<p>
-                    		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                    		lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, 
-                    		quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
-                    		<br>
-                    		<a href="">John Doe, johndoe.com</a>
-                    	</p>
-                    	<div class="testimonial-single-image">
-                    		<img src="assets/img/testimonials/3.jpg" alt="">
-                    	</div>
-                    </div>
-                    <div class="testimonial-single">
-                    	<p>
-                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                    		ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-                    		incididunt ut labore et. Lorem ipsum dolor sit amet.
-                    		<br>
-                    		<a href="">Jane Jonsson, blog.jane.com</a>
-                    	</p>
-                    	<div class="testimonial-single-image">
-                    		<img src="assets/img/testimonials/2.jpg" alt="">
-                    	</div>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="feature-img">
+                <img src="assets/images/pic02.jpg" alt="">
+              </div>
             </div>
+            <div class="col-md-6">
+              <!--|Section Header|-->
+              <header class="section-header">
+                <h2 class="section-title">Our priority : <span>your success</span></h2>
+                <p class="legal">We like to engage with our clients in a long-term partnership.
+                We believe our clients’ success are our own, and we are committed to serve our clients to the fullest extent of our capabilities. We strive to build solutions that connect your business strategy to your operations, and your operations back to your strategy, in a tight feedback loop. So that your company can adapt faster, and embrace change instead of resisting it.</p>
+              </header> <!--|End Section Header|-->
+            </div>
+          </div>
         </div>
-	-->
-        <!-- Who's behind this -->
-	<!--
-        <div class="whos-behind-container">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-sm-12 whos-behind">
-	                    <h3>Who's behind this</h3>
-	                    <p>
-	                    	Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-	                    	lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam.
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-sm-4 whos-behind-box-1">
-	                	<div class="whos-behind-photo">
-	                		<img src="assets/img/team/1.jpg" alt="">
-	                		<div class="whos-behind-social">
-	                			<a href=""><i class="fa fa-facebook"></i></a>
-	                			<a href=""><i class="fa fa-twitter"></i></a>
-	                			<a href=""><i class="fa fa-linkedin"></i></a>
-	                			<a href=""><i class="fa fa-envelope"></i></a>
-	                		</div>
-	                	</div>
-	                    <h4>John Doe</h4>
-	                    <h5>Developer</h5>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	                <div class="col-sm-4 whos-behind-box-1">
-	                	<div class="whos-behind-photo">
-	                		<img src="assets/img/team/2.jpg" alt="">
-	                		<div class="whos-behind-social">
-	                			<a href=""><i class="fa fa-facebook"></i></a>
-	                			<a href=""><i class="fa fa-twitter"></i></a>
-	                			<a href=""><i class="fa fa-linkedin"></i></a>
-	                			<a href=""><i class="fa fa-envelope"></i></a>
-	                		</div>
-	                	</div>
-	                    <h4>Tim Brown</h4>
-	                    <h5>Founder</h5>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	                <div class="col-sm-4 whos-behind-box-1">
-	                	<div class="whos-behind-photo">
-	                		<img src="assets/img/team/3.jpg" alt="">
-	                		<div class="whos-behind-social">
-	                			<a href=""><i class="fa fa-facebook"></i></a>
-	                			<a href=""><i class="fa fa-twitter"></i></a>
-	                			<a href=""><i class="fa fa-linkedin"></i></a>
-	                			<a href=""><i class="fa fa-envelope"></i></a>
-	                		</div>
-	                	</div>
-	                    <h4>Sarah Red</h4>
-	                    <h5>Designer</h5>
-	                    <p>
-	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
-	                    	labore et.
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-sm-12 latest-tweets">
-	                    <h4>Our Latest Tweets</h4>
-	                    <p class="tweet-active"></p>
-	                    <div class="tweets"></div>
-	                </div>
-	            </div>
-	        </div>
+     </section>
+  <!--|===================================================================
+  |Clients we serve
+  |=======================================================================|-->
+<section id="Clients" class="section">
+      <div class="container">
+        <!--|Section Header|-->
+        <header class="section-header align-center">
+          <div class="row">
+            <div class="col-md-6 block-center">
+              <h2 class="section-title">Clients we serve </h2>
+            </div>
+          </div>
+          <div >
+            <div class="col-xs-12 col-md-6">
+
+              <div class="col-md-12"><a href="http://www.delhaizegroup.com" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client04.jpg" align="middle"></a></div>
+
+              <div class="col-md-12"><a href="https://realimpactanalytics.com/en" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client03.jpg" align="middle"></a></div>
+
+              <div class="col-md-12"><a href="http://www.fluxys.com/belgium/fr-BE" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client08.jpg" align="middle"></a></div>
+
+              <div class="col-md-12"><a href="http://www.mckinseysolutions.com/" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client07.jpg" align="middle"></a></div>
+
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="col-md-12 "><a href="https://www.xamarin.com/" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client02.jpg" align="middle"></a></div>
+
+              <div class="col-md-12 "><a href="https://www.microsoft.com/fr-be/" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client06.jpg" align="middle"></a></div>
+
+              <div class="col-md-12 "><a href="http://www.mic-belgique.be/" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client01.jpg" align="middle"></a></div>
+
+              <div class="col-md-12 "><a href="https://www.apperian.com/" target="_blank">
+              <img class="Client-horizontal" src="assets/images/clients/Client05.jpg" align="middle"></a></div>
+              <!-- <div class="col-md-10"><img class="Client-horizontal" src="assets/images/clients/Client03.jpg"></div> -->
+            </div>
+          </div>
         </div>
-	--> 
-        <!-- How to contact us -->
+      </section>
+	 <!--|===================================================================
+  |Expertise & Consulting Services<
+  |=======================================================================|-->
+
+     <!--|Promo Section|-->
+	<section id="Expertise" class="section section-bg">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 contact">
-                    <h3>How to contact us</h3>
-                    <p>
-			We're refreshing this page, but don't worry, we're operating as usual. Drop us a line or a few paragraphs and we'll come back to you by email.
-                    </p>
-                </div>
+          <div class="row">
+            <div class="col-md-6">
+              <!--|Section Header|-->
+              <header class="section-header">
+                <h2 class="section-title"><span>Expertise</span> & Consulting Services</h2>
+                <p class="legal">Aside from end-to-end digital solutions, mi8 also offers consulting services to mature IT & digital departments. We understand the challenges for organisations to build up knowledge for a Mobile first, Cloud first & Smart Devices world, and the risks of an unsettled technological landscape. We offer expertise on various topics such as Xamarin Cross-Platform Development, Mobile DevOps, Mobile Testing, Mobile Security and Mobile Enterprise integration.</p>
+              </header>
+              <!--|End Section Header|-->
             </div>
-            <div class="row">
-                <div class="col-sm-7 contact-form">
-                    <h4>Send us a message</h4>
-		    <p>
-			We're mobile minded, and we're reading our mail everywhere, everytime. Contact us at <a href="mailto:info@mi8.be">info@mi8.be</a> then sit back and relax. You're in good hands.
-		    </p>
-<!--
-                    <form role="form" action="assets/contact.php" method="post">
-                    	<div class="form-group">
-                    		<label class="sr-only" for="contact-email">Email</label>
-                        	<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
-                        </div>
-                        <div class="form-group">
-                        	<label class="sr-only" for="contact-subject">Subject</label>
-                        	<input type="text" name="subject" placeholder="Subject..." class="contact-subject form-control" id="contact-subject">
-                        </div>
-                        <div class="form-group">
-                        	<label class="sr-only" for="contact-message">Message</label>
-                        	<textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send</button>
-                    </form>
-		    -->
-                </div>
-                <div class="col-sm-5 contact-address">
-                    <h4>We're quite close actually</h4>
-                    <div class="map"></div>
-                    <h4>Address</h4>
-                    <p><i class="fa fa-map-marker"></i>Chaussée de Namur 35/5, 1457 Walhain, Belgium</p>
-		    <!--
-                    <p><i class="fa fa-phone"></i>Phone: 0032 476 85 93 45</p>
-		    -->
-                </div>
+            <div class="col-md-6">
+              <div class="feature-img">
+                <img src="assets/images/mackbook02.jpg" alt="">
+              </div>
             </div>
+          </div>
         </div>
-        
-        <!-- Footer -->
-	<!--
-        <footer>
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-sm-7 footer-copyright">
-	                    <p>&copy; Mira Bootstrap Template by <a href="http://azmind.com" target="_blank">Azmind</a><br>All rights reserved.</p>
+      </section>
+
+  <!--|===================================================================
+  |Header
+  |=======================================================================|-->
+      <!--|Statistics|-->
+      <!-- <div class="statistics overlay-black">
+        <div class="overlay-inner">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                
+                <div class="statistic-box">
+                  	<i class="fp-icon ion-ios-cloud-download-outline"></i>
+	                <div class="text">
+	                    <h4 class="title"><span class="countup">1,400</span>+</h4>
+	                    					<span class="fp-meta">Total Downloads</span>
 	                </div>
-	                <div class="col-sm-5 footer-social">
-	                    <a class="ultm ultm-facebook ultm-48 ultm-square ultm-gray-to-color" href=""></a>
-	                    <a class="ultm ultm-twitter ultm-48 ultm-square ultm-gray-to-color" href=""></a>
-	                    <a class="ultm ultm-google-plus-1 ultm-48 ultm-square ultm-gray-to-color" href=""></a>
-	                    <a class="ultm ultm-dribbble ultm-48 ultm-square ultm-gray-to-color" href=""></a>
-	                    <a class="ultm ultm-pinterest ultm-48 ultm-square ultm-gray-to-color" href=""></a>
-	                </div>
-	            </div>
-	        </div>
-        </footer>
-	-->
+                </div>
+                
+              </div>
+              <div class="col-md-3 col-sm-6">
+                
+                <div class="statistic-box">
+                  <i class="fp-icon ion-leaf"></i>
+                  <div class="text">
+                    <h4 class="title"><span class="countup">9,305</span></h4>
+                    <span class="fp-meta">Line of Code</span>
+                  </div>
+                </div> 
+              </div>
+              <div class="col-md-3 col-sm-6">
+               
+                <div class="statistic-box">
+                  <i class="fp-icon ion-ios-paw-outline"></i>
+                  <div class="text">
+                    <h4 class="title"><span class="countup">17</span></h4>
+                    <span class="fp-meta">Awards</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                
+                <div class="statistic-box">
+                  <i class="fp-icon ion-ios-partlysunny-outline"></i>
+                  <div class="text">
+                    <h4 class="title"><span class="countup">235</span>+</h4>
+                    <span class="fp-meta">Solved Ticket</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!--|End Statistic|-->
 
-        <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/twitter/jquery.tweet.min.js"></script>
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="assets/js/jquery.ui.map.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
 
-    </body>
+    </div> <!--||End Features||-->
 
+  <!--|===================================================================
+  |Blog
+  |=======================================================================|-->
+  <!-- <section id="blog" class="section blog-posts">
+    <div class="container">
+      
+      <header class="section-header align-center">
+        <div class="row">
+          <div class="col-md-6 block-center">
+            <h2 class="section-title">Latest from <span>Blog</span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </header>
+
+      
+      <div class="posts-wrapper">
+        <div class="row">
+          <div class="col-md-6">
+            
+            <article class="fp-post">
+              <a class="thumb-container" href="#">
+                <img src="assets/images/posts/img01.jpg" alt="">
+              </a>
+              <div class="post-desc">
+                <header class="post-header">
+                  <div class="fp-cat post-meta"><a href="#">Business</a></div>
+                  <h4 class="post-title"><a href="#">You Might not be Aware of This Fact Gravida</a></h4>
+                </header>
+                <div class="fp-entry">
+                  <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt[...]</p>
+                  <a class="more-btn" href="#">Read More +</a>
+                </div>
+              </div>
+            </article> 
+          </div>
+
+          <div class="col-md-6">
+            
+            <article class="fp-post">
+              <a class="thumb-container" href="#">
+                <img src="assets/images/posts/img02.jpg" alt="">
+              </a>
+              <div class="post-desc">
+                <header class="post-header">
+                  <div class="fp-cat post-meta"><a href="#">Business</a></div>
+                  <h4 class="post-title"><a href="#">Proin Gravida Nibh vel Velit Auctor Aliquet</a></h4>
+                </header>
+                <div class="fp-entry">
+                  <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt[...]</p>
+                  <a class="more-btn" href="#">Read More +</a>
+                </div>
+              </div>
+            </article> 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+           
+            <article class="fp-post">
+              <a class="thumb-container" href="#">
+                <img src="assets/images/posts/img03.jpg" alt="">
+              </a>
+              <div class="post-desc">
+                <header class="post-header">
+                  <div class="fp-cat post-meta"><a href="#">Business</a></div>
+                  <h4 class="post-title"><a href="#">Tips for Increasing Your Referral Income</a></h4>
+                </header>
+                <div class="fp-entry">
+                  <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt[...]</p>
+                  <a class="more-btn" href="#">Read More +</a>
+                </div>
+              </div>
+            </article> 
+          </div>
+
+          <div class="col-md-6">
+         
+            <article class="fp-post">
+              <a class="thumb-container" href="#">
+                <img src="assets/images/posts/img04.jpg" alt="">
+              </a>
+              <div class="post-desc">
+                <header class="post-header">
+                  <div class="fp-cat post-meta"><a href="#">Webdesign</a></div>
+                  <h4 class="post-title"><a href="#">You might not be aware of this fact</a></h4>
+                </header>
+                <div class="fp-entry">
+                  <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt[...]</p>
+                  <a class="more-btn" href="#">Read More +</a>
+                </div>
+              </div>
+            </article> 
+          </div>
+        </div>
+
+   
+        <div class="btn-panel">
+          <a class="btn btn-primary" href="#">View More</a>
+        </div> 
+      </div> 
+    </div>
+  </section> --> <!--|End Blog|-->
+
+  <!--|===================================================================
+  |Footer
+  |=======================================================================|-->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="row">
+
+          <div class="col-xs-12 col-md-3">
+            <a class="thumb-container" href="#">
+                <img src="assets/images/AboutUsXS.jpg" alt="">
+              </a>
+          </div>
+
+          <div class="col-xs-12 col-md-3">
+            <p class="legal">Looking for a partner to boost your digital transformation ?<br/>
+            We'd love to help. </p>
+          </div>
+
+          <div class="col-xs-12 col-md-3">
+            <table>
+              <tr>
+                <th><i class="ion-iphone footericon"></i></th>
+                <td><span itemprop="jobTitle">Mobile Inception s.c.r.i</span></td>
+              </tr>
+
+<!--               <tr>
+                <td><i class="ion-ios-home footericon"></i></td>
+                <td><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Tour d'Olga 4 - 1435 Hévillers</span></td>
+              </tr> -->
+
+              <tr>
+                <td><i class="ion-printer footericon"></i></td>
+                <td><span>VAT BE 0535.711.105</span></td>
+              </tr>
+              <tr>
+                <td><i class="ion-paper-airplane footericon"></i></td>
+                <td><span><a itemprop="email" href="mailto:info@mi8.be">info@mi8.be</a></span></td>
+              </tr>
+              <tr>
+              <!-- ion-map
+              ios-home -->
+                <td><i class="ion-map footericon"></i></td>
+                <td><span><a itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" href="https://goo.gl/maps/vBR8iC5Ygjq" target="_blank">Chaussée de Namur 31/5</a></span>
+                </span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><a href="https://goo.gl/maps/vBR8iC5Ygjq" target="_blank">1457 Walhain, Belgium</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-xs-12 col-md-3">
+            <!--|Button Panel|-->
+            <div class="btn-panel" align="center">
+              <a class="btn btn-xlg btn-primary" href="mailto:info@mi8.be" target="_top">
+                <span class="ion-paper-airplane" aria-hidden="true"></span> Contact Us</a>
+              </div>
+              <!--|End Button Panel|-->
+              <div class="social-links brand-color">
+                <!--<p>Follow Us :</p> -->
+                <a class="twitter" href="https://twitter.com/mobileInception" target="_blank"><i class="ion-social-twitter"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/company/mobile-inception---mi8?trk=company_logo" target="_blank"><i class="ion-social-linkedin"></i></a>
+                <!-- <a class="github" href="#"><i class="ion-social-github"></i></a> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <div class="col-xs-12 col-md-12 offset12 SubFooter">
+      <div class="SubFooter">
+       <p class="copyright">&copy; 2016 Mobile Inception. All Rights Reserved</p>
+     </div>
+   </div>
+   <!--|End Footer|-->
+
+
+
+  <!--|===================================================================
+  |Scripts
+  |=======================================================================|-->
+
+ <!--||Javascript||-->
+ <!--|jQuery|-->
+  <script src="assets/js/jquery.min.js"></script>
+  <!--|Vegas|-->
+  <script src="assets/js/vegas.min.js"></script>
+  <!--|Form|-->
+  <script src="assets/js/jquery.form.js"></script>
+  <!--|Validate|-->
+  <script src="assets/js/jquery.validate.min.js"></script>
+  <!--|Ajaxchimp|-->
+  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+  <!--|Waypoints|-->
+  <script src="assets/js/waypoints.min.js"></script>
+  <!--|Ajaxchimp|-->
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <!--|Magnific Popup|-->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <!--|Owl Carousel|-->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!--|Bootstrap|-->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--|Init|-->
+  <script src="assets/js/init.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+  <script src="assets/js/jquery.sticky.js"></script>
+  <script>
+    $(window).load(function(){
+      $("#topfixescroll").sticky({ topSpacing: 0 });
+    });
+  </script>
+</body>
 </html>
