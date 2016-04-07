@@ -403,6 +403,7 @@ img {
 }
 
 .block-image img {
+  padding-top: 25px;
   margin-bottom: -30px;
 }
 
@@ -482,7 +483,7 @@ img {
 }
 
 .promo-section {
-  padding: 60px 0 30px;
+  padding: 25px 0 50px;
   background-color: #ffffff;
 }
 
@@ -491,7 +492,8 @@ img {
 }
 
 .section-header {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
+  padding-top: 25px;
 }
 .section-header .section-title {
   font-family: "Roboto", serif;
@@ -1130,7 +1132,7 @@ img {
 # Clients
 --------------------------------------------------------------*/
 .clients {
-  background-color: #212121;
+  background-color: #363636;
   padding: 20px 0 20px;
   text-align: center;
   opacity: 0.97;
@@ -1144,14 +1146,16 @@ img {
 }*/
 
 .clients p {
-  font-family: 'Raleway', sans-serif;
-  font-style: italic;
+  font-family: 'Raleway';
+  /*font-style: italic;*/
   font-size: 18pt;
-  font-weight: 300;
+  font-weight: 400;
   display:inline;
   /*font-stretch: condensed;*/
   /*font-style: italic;*/
   color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .clients span {
@@ -2045,7 +2049,7 @@ z-index: -100;
 
   .clients p {
     font-family: 'Raleway', sans-serif;
-    font-style: italic;
+
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -2101,8 +2105,8 @@ z-index: -100;
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -2154,8 +2158,8 @@ z-index: -100;
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -2212,8 +2216,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -2268,8 +2272,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -2322,8 +2326,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -2374,8 +2378,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -2416,8 +2420,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -2462,8 +2466,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 13pt;
     font-weight: 300;
     display:inline;
@@ -2515,8 +2519,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 13pt;
     font-weight: 300;
     display:inline;
@@ -2563,8 +2567,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 13pt;
     font-weight: 300;
     display:inline;
@@ -2615,8 +2619,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 13pt;
     font-weight: 300;
     display:inline;
@@ -2664,8 +2668,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 16pt;
     font-weight: 300;
     display:inline;
@@ -2712,8 +2716,8 @@ z-index: -100;
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 16pt;
     font-weight: 300;
     display:inline;
@@ -2763,8 +2767,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -2806,8 +2810,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 18pt;
     font-weight: 300;
     display:inline;
@@ -2850,8 +2854,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 11pt;
     font-weight: 300;
     display:inline;
@@ -2895,8 +2899,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -2939,8 +2943,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -2984,8 +2988,8 @@ z-index: -100;
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 16pt;
     font-weight: 300;
     display:inline;
@@ -3028,8 +3032,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 19pt;
     font-weight: 300;
     display:inline;
@@ -3071,8 +3075,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 16pt;
     font-weight: 300;
     display:inline;
@@ -3116,8 +3120,8 @@ z-index: -100;
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 19pt;
     font-weight: 300;
     display:inline;
@@ -3162,8 +3166,8 @@ z-index: -100;
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 19pt;
     font-weight: 300;
     display:inline;
@@ -3215,8 +3219,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -3257,8 +3261,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3298,8 +3302,8 @@ Résolutions adaptées :
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3340,8 +3344,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 25pt;
     font-weight: 300;
     display:inline;
@@ -3393,8 +3397,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 11pt;
     font-weight: 300;
     display:inline;
@@ -3434,8 +3438,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3476,8 +3480,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3517,8 +3521,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3559,8 +3563,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 15pt;
     font-weight: 300;
     display:inline;
@@ -3595,8 +3599,8 @@ Résolutions adaptées :
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -3634,8 +3638,8 @@ Résolutions adaptées :
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -3691,8 +3695,8 @@ Résolutions adaptées :
   }
 
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
@@ -3746,8 +3750,8 @@ Résolutions adaptées :
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -3798,8 +3802,8 @@ Résolutions adaptées :
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -3851,15 +3855,15 @@ Résolutions adaptées :
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
-    font-size: 9pt;
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-style: italic;*/
+    font-size: 17pt;
     font-weight: 300;
     display:inline;
     color: #FFFFFF;
   }
   .clients span {
-    font-size: 10pt;
+    font-size: 17pt;
   }
   .clients img {
     height: 15px;
@@ -3879,8 +3883,8 @@ Résolutions adaptées :
     font-size: 1.6em;
   }
   .footer p {
-    padding: 30px;
-    text-align: center;
+    /*padding: 30px;*/
+    text-align: left;
   }
 }
 
@@ -3903,8 +3907,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -3945,8 +3949,8 @@ Résolutions adaptées :
     font-weight: 300 !important
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  
+    
     font-size: 10pt;
     font-weight: 300;
     display:inline;
@@ -3993,8 +3997,8 @@ Résolutions adaptées :
     padding: 4px;
   }
   .clients p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
+  font-style: italic;
+    
     font-size: 8pt;
     font-weight: 300;
     display:inline;
