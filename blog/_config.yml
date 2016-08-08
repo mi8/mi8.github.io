@@ -2,8 +2,8 @@ full_rebuild: true
 name: mi8-Blog
 description: Enterprise solutions for a Digital world
 destination: jekyllbuild
-url: http://www.mi8.be
-baseurl: /blog
+url: http://www.mi8.be/blog
+baseurl: #place folder name if site is served in subfolder
 permalink: /:title/
 paginate: 8
 paginate_path: /page/:num/
