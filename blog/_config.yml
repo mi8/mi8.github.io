@@ -3,7 +3,7 @@ name: mi8-Blog
 description: Enterprise solutions for a Digital world
 destination: jekyllbuild
 url: http://www.mi8.be
-baseurl: http://www.mi8.be/blog
+baseurl: /blog
 permalink: /:title/
 paginate: 8
 paginate_path: /page/:num/
