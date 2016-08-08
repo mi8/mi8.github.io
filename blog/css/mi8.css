@@ -50,6 +50,9 @@
 	width: 100%;
 }
 
+.form-Search {
+	display: none;
+}
 
 /*.articles .jscroll-inner .switch {
 z-index: 20;

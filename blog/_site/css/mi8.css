@@ -1,0 +1,77 @@
+.logomi8 {
+	display: block;
+	max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.centerimage {
+	display: block;
+    margin: 0 auto;
+}
+
+.rightimage {
+	display: inline-block;
+	float: right;
+}
+
+.backLogo{
+	z-index: 0;
+	position: fixed;
+}
+
+.featimg_10 {
+	width: 10%;
+}
+.featimg_20 {
+	width: 20%;
+}
+.featimg_30 {
+	width: 30%;
+}
+.featimg_40 {
+	width: 40%;
+}
+.featimg_50 {
+	width: 50%;
+}
+.featimg_60 {
+	width: 60%;
+}
+.featimg_70 {
+	width: 70%;
+}
+.featimg_80 {
+	width: 80%;
+}
+.featimg_90 {
+	width: 90%;
+}
+.featimg_100 {
+	width: 100%;
+}
+
+
+/*.articles .jscroll-inner .switch {
+z-index: 20;
+}
+
+.jscroll-inner {
+	z-index: 20;
+}
+
+.switch {
+z-index: 20;
+}
+
+.main-menu {
+	z-index: 30;
+}
+
+#menu {
+	z-index: 30;
+}
+*/
+/*body {
+	background-image: url("../img/1.jpg");
+	background-repeat: no-repeat;
+}*/

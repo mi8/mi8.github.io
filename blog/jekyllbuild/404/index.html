@@ -29,6 +29,9 @@
                 <li>
                     <a href="/archive">Archive</a>
                 </li>
+                <li>
+                    <a href="http://www.mi8.be" target="_blank">Website</a>
+                </li>
 
             </ul>
         </nav>
@@ -37,7 +40,7 @@
                 <li class="sicon">
                     <a href='#search'><i class='fa fa-search'></i></a>
                 </li>
-                
+               <!--  
                 <li class="social">
                     <a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a>
                 </li>
@@ -69,7 +72,7 @@
                 <li class="social">
                     <a href="#" class="soundcloud"><i class="fa fa-soundcloud"></i></a>
                 </li>
-                
+                 -->
             </ul>
         </nav>
         <a href='#menu' class="toggle-link noline">
@@ -80,9 +83,21 @@
 
         </header>
         <div id="search">
-    <form role="search" id="searchform">
-        <input type="search" placeholder="Search"/>
+   <!--  <form role="search" id="searchform">
+        <input type="search" placeholder="Searche"/>
+    </form> -->
+
+	<form role="search" id="searchform" action="/search"  method="get">
+        <input type="search" placeholder="Search" id="search_box" name="query"/>
     </form>
+
+
+
+    <!-- <form action="/search" method="get">
+		<label for="search_box">Search</label>
+		<input type="text" id="search_box" name="query">
+		<input type="submit" value="search">
+	</form> -->
 </div>
 
         <div class="margin">
@@ -106,7 +121,33 @@
 <article>
     
         
-                <a href="/create-post/" class="noline">
+                <a href="/tutorial/" class="noline">
+                    
+                    
+                    <img src="/media/compressed/crops/450x253/default-450x253.png" alt="default">
+                    
+                </a>
+        
+    
+    <span class="date">July 19, 2016</span>
+    <a href="/tutorial/">
+        <h1>Comment créé un post ?</h1>
+    </a>
+    <p class="post-content">COMMENT CREE UN POST DANS LE BLOG MI8 ? Avant toutes choses créé une nouvelle...</p>
+    <p class="actions">
+        <a href="/tutorial/">Read More</a>
+    </p>
+</article>
+
+
+    <!-- 
+    this is the complete index for articles, as you can see it on the index page.
+    Every Post type get's their own little settings.
+-->
+<article>
+    
+        
+                <a href="/Layout/" class="noline">
                     
                     
                     <img src="/media/compressed/crops/450x253/default-450x253.png" alt="default">
@@ -115,12 +156,12 @@
         
     
     <span class="date">July 18, 2016</span>
-    <a href="/create-post/">
-        <h1>Create Post</h1>
+    <a href="/Layout/">
+        <h1>Layout Post</h1>
     </a>
     <p class="post-content">Here you can see the basic post. No fancy type, no setting and the featured...</p>
     <p class="actions">
-        <a href="/create-post/">Read More</a>
+        <a href="/Layout/">Read More</a>
     </p>
 </article>
 
@@ -177,31 +218,6 @@
 </article>
 
 
-    <!-- 
-    this is the complete index for articles, as you can see it on the index page.
-    Every Post type get's their own little settings.
--->
-<article>
-    
-        
-            
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/JUT-3jGyjoM?feature=player_detailpage" allowfullscreen></iframe>
-                </div>
-            
-        
-    
-    <span class="date">February 09, 2015</span>
-    <a href="/youtube/">
-        <h1>YouTube</h1>
-    </a>
-    <p class="post-content">This is a youtube post type video. For a YouTube video, no embedding code is...</p>
-    <p class="actions">
-        <a href="/youtube/">Read More</a>
-    </p>
-</article>
-
-
 
                 </div>
                 <div class="sidebar material-sidebar">
@@ -248,6 +264,8 @@
         
             <li><a href="/category/standard">standard</a></li>
         
+            <li><a href="/category/Jekyll">Jekyll</a></li>
+        
     
     
 </ul>
@@ -272,6 +290,8 @@
             <li><a href="/tag/soundcloud">soundcloud</a></li>
         
             <li><a href="/tag/text">text</a></li>
+        
+            <li><a href="/tag/tuto">tuto</a></li>
         
     
     
@@ -317,7 +337,7 @@
         </div>
         <footer>
     <div class="content">
-        <span>&copy; gridster</span>
+        <span>&copy; mi8</span>
         <span class="backtotop">back to top</span>
     </div>
 </footer>
