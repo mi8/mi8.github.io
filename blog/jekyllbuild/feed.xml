@@ -2,12 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>mi8-Blog</title>
-		<description>Enterprise solutions for Digital world</description>
+		<description>Enterprise solutions for a Digital world</description>
 		<link></link>
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>Create Post</title>
+				<title>Comment créé un post ?</title>
+				
+				
+					<description>&lt;p&gt;
+&lt;br /&gt;
+&lt;h5&gt;COMMENT CREE UN POST DANS LE BLOG MI8 ?&lt;/h5&gt;
+&lt;br /&gt;
+Avant toutes choses créé une nouvelle branche sur Github. Vous avez la posibilité de travail en local pour cela il vous faudrait installer &lt;b&gt;Jekyll Serve&lt;/b&gt;
+&lt;br /&gt;
+&lt;a href=&quot;https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/&quot; target=&quot;_blank&quot;&gt;Lien tuto&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 19 Jul 2016 00:00:00 +0200</pubDate>
+				<link>/tutorial/</link>
+				<guid isPermaLink="true">/tutorial/</guid>
+			</item>
+		
+			<item>
+				<title>Layout Post</title>
 				
 				
 					<description>&lt;p&gt;Here you can see the basic post. No fancy type, no setting and the featured image is just embedded into the content.
@@ -16,8 +38,8 @@ The front matter for that basic post just consists of the basic tags, author, ti
 </description>
 				
 				<pubDate>Mon, 18 Jul 2016 00:00:00 +0200</pubDate>
-				<link>/create-post/</link>
-				<guid isPermaLink="true">/create-post/</guid>
+				<link>/Layout/</link>
+				<guid isPermaLink="true">/Layout/</guid>
 			</item>
 		
 			<item>

@@ -51,6 +51,9 @@
                 <li>
                     <a href="/archive">Archive</a>
                 </li>
+                <li>
+                    <a href="http://www.mi8.be" target="_blank">Website</a>
+                </li>
 
             </ul>
         </nav>
@@ -59,7 +62,7 @@
                 <li class="sicon">
                     <a href='#search'><i class='fa fa-search'></i></a>
                 </li>
-                
+               <!--  
                 <li class="social">
                     <a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a>
                 </li>
@@ -91,7 +94,7 @@
                 <li class="social">
                     <a href="#" class="soundcloud"><i class="fa fa-soundcloud"></i></a>
                 </li>
-                
+                 -->
             </ul>
         </nav>
         <a href='#menu' class="toggle-link noline">
@@ -102,9 +105,21 @@
 
         </header>
         <div id="search">
-    <form role="search" id="searchform">
-        <input type="search" placeholder="Search"/>
+   <!--  <form role="search" id="searchform">
+        <input type="search" placeholder="Searche"/>
+    </form> -->
+
+	<form role="search" id="searchform" action="/search"  method="get">
+        <input type="search" placeholder="Search" id="search_box" name="query"/>
     </form>
+
+
+
+    <!-- <form action="/search" method="get">
+		<label for="search_box">Search</label>
+		<input type="text" id="search_box" name="query">
+		<input type="submit" value="search">
+	</form> -->
 </div>
 
         <div class="margin">
@@ -116,6 +131,10 @@
                 <h1 class="title">Posts Tagged: iframe</h1>
                 <div class="articles">
                     
+    
+        
+    
+
     
         
     
@@ -275,6 +294,8 @@
         
             <li><a href="/category/standard">standard</a></li>
         
+            <li><a href="/category/Jekyll">Jekyll</a></li>
+        
     
     
 </ul>
@@ -300,6 +321,8 @@
             <li><a href="/tag/soundcloud">soundcloud</a></li>
         
             <li><a href="/tag/text">text</a></li>
+        
+            <li><a href="/tag/tuto">tuto</a></li>
         
     
     
@@ -345,7 +368,7 @@
         </div>
         <footer>
     <div class="content">
-        <span>&copy; gridster</span>
+        <span>&copy; mi8</span>
         <span class="backtotop">back to top</span>
     </div>
 </footer>
