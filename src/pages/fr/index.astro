@@ -1,0 +1,244 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/ui';
+
+const lang = 'fr' as const;
+const posts = (await getCollection('blog-fr'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<Layout title={t(lang, 'meta.title')} lang={lang}>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/fr" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">{t(lang, 'nav.services')}</a></li>
+        <li><a href="#use-cases">{t(lang, 'nav.useCases')}</a></li>
+        <li><a href="#sovereignty">{t(lang, 'nav.approach')}</a></li>
+        <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang={lang} path="/" />
+        <ThemeToggle />
+        <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="section-label">{t(lang, 'hero.label')}</p>
+        <h1>{t(lang, 'hero.title.before')}<span class="accent">{t(lang, 'hero.title.accent')}</span>{t(lang, 'hero.title.after')}</h1>
+        <p>{t(lang, 'hero.description')}</p>
+        <div class="hero-actions">
+          <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
+          <a href="#use-cases" class="btn btn-outline">{t(lang, 'hero.secondary')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">{t(lang, 'services.label')}</p>
+      <h2 class="section-title">{t(lang, 'services.title')}</h2>
+      <p class="section-subtitle">{t(lang, 'services.subtitle')}</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">&#9670;</span>
+          <h3>{t(lang, 'services.build.title')}</h3>
+          <p>{t(lang, 'services.build.description')}</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9881;</span>
+          <h3>{t(lang, 'services.run.title')}</h3>
+          <p>{t(lang, 'services.run.description')}</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9741;</span>
+          <h3>{t(lang, 'services.improve.title')}</h3>
+          <p>{t(lang, 'services.improve.description')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label">{t(lang, 'useCases.label')}</p>
+      <h2 class="section-title">{t(lang, 'useCases.title')}</h2>
+      <p class="section-subtitle">{t(lang, 'useCases.subtitle')}</p>
+      <div class="use-cases-grid">
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.invoice.title')}</h3>
+          <p>{t(lang, 'useCases.invoice.description')}</p>
+        </div>
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.onboarding.title')}</h3>
+          <p>{t(lang, 'useCases.onboarding.description')}</p>
+        </div>
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.support.title')}</h3>
+          <p>{t(lang, 'useCases.support.description')}</p>
+        </div>
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.compliance.title')}</h3>
+          <p>{t(lang, 'useCases.compliance.description')}</p>
+        </div>
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.pipeline.title')}</h3>
+          <p>{t(lang, 'useCases.pipeline.description')}</p>
+        </div>
+        <div class="use-case">
+          <h3>{t(lang, 'useCases.knowledge.title')}</h3>
+          <p>{t(lang, 'useCases.knowledge.description')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sovereignty -->
+  <section id="sovereignty">
+    <div class="container">
+      <p class="section-label">{t(lang, 'sovereignty.label')}</p>
+      <h2 class="section-title">{t(lang, 'sovereignty.title')}</h2>
+      <p class="section-subtitle">{t(lang, 'sovereignty.subtitle')}</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">&#9618;</span>
+          <h3>{t(lang, 'sovereignty.infra.title')}</h3>
+          <p>{t(lang, 'sovereignty.infra.description')}</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9735;</span>
+          <h3>{t(lang, 'sovereignty.oss.title')}</h3>
+          <p>{t(lang, 'sovereignty.oss.description')}</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9740;</span>
+          <h3>{t(lang, 'sovereignty.privacy.title')}</h3>
+          <p>{t(lang, 'sovereignty.privacy.description')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label text-center">{t(lang, 'process.label')}</p>
+      <h2 class="section-title text-center">{t(lang, 'process.title')}</h2>
+      <p class="section-subtitle text-center mx-auto">{t(lang, 'process.subtitle')}</p>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <h3>{t(lang, 'process.discover.title')}</h3>
+          <p>{t(lang, 'process.discover.description')}</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <h3>{t(lang, 'process.build.title')}</h3>
+          <p>{t(lang, 'process.build.description')}</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <h3>{t(lang, 'process.deploy.title')}</h3>
+          <p>{t(lang, 'process.deploy.description')}</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <h3>{t(lang, 'process.improve.title')}</h3>
+          <p>{t(lang, 'process.improve.description')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">{t(lang, 'about.label')}</p>
+      <h2 class="section-title">{t(lang, 'about.title')}</h2>
+      <div class="about-content">
+        <p>{t(lang, 'about.p1')}</p>
+        <p>{t(lang, 'about.p2')}</p>
+        <p>{t(lang, 'about.p3')}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label">{t(lang, 'blog.label')}</p>
+      <h2 class="section-title">{t(lang, 'blog.title')}</h2>
+      <p class="section-subtitle">{t(lang, 'blog.subtitle')}</p>
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/fr/blog/${post.slug}`} class="blog-card">
+            <p class="blog-card-date">
+              {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="blog-card-link">{t(lang, 'blog.readMore')}</span>
+          </a>
+        ))}
+      </div>
+      <div class="blog-more">
+        <a href="/fr/blog" class="btn btn-outline">{t(lang, 'blog.allPosts')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>{t(lang, 'cta.title')}</h2>
+      <p class="section-subtitle mx-auto" style="margin-bottom: 2rem;">{t(lang, 'cta.description')}</p>
+      <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'cta.button')}</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">{t(lang, 'footer.company')}</p>
+          <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@mi8.be">info@mi8.be</a>
+          <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>{t(lang, 'footer.copyright')}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+  </script>
+</Layout>

@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<Layout title="mi8 — Managed AI Agents for the Enterprise" lang="en">
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#sovereignty">Our approach</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang="en" path="/" />
+        <ThemeToggle />
+        <a href="mailto:info@mi8.be?subject=Discovery%20call%20request" class="btn btn-primary">Book a discovery call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="section-label">Managed AI Agents</p>
+        <h1>We run <span class="accent">AI agents</span> so you don't have to</h1>
+        <p>We build, deploy, and operate AI agents for your business&mdash;on sovereign infrastructure, powered by open-source models. Privacy-preserving by design. Your agents get smarter every month.</p>
+        <div class="hero-actions">
+          <a href="mailto:info@mi8.be?subject=Discovery%20call%20request" class="btn btn-primary">Book a discovery call</a>
+          <a href="#use-cases" class="btn btn-outline">See use cases</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">What we do</p>
+      <h2 class="section-title">Agents as a service, not a project</h2>
+      <p class="section-subtitle">We don't hand you code and walk away. We build agents, run them in production, and make sure they deliver results.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">&#9670;</span>
+          <h3>We build your agents</h3>
+          <p>We identify the workflows where AI agents create the most value, then design and build production-grade agents tailored to your domain, data, and systems.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9881;</span>
+          <h3>We run them for you</h3>
+          <p>Your agents run on sovereign infrastructure. We handle hosting, monitoring, guardrails, and incident response. Regulatory-compliant by design. You get a dashboard and an SLA, not a codebase to maintain.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9741;</span>
+          <h3>They get better over time</h3>
+          <p>We continuously evaluate agent performance, tune prompts, and upgrade to the best open-source models. Your agents improve every month&mdash;without vendor lock-in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label">Use cases</p>
+      <h2 class="section-title">Agents that do real work</h2>
+      <p class="section-subtitle">Here are some of the workflows our agents handle every day.</p>
+      <div class="use-cases-grid">
+        <div class="use-case">
+          <h3>Invoice &amp; expense processing</h3>
+          <p>Agents extract data from invoices, match them against POs, flag discrepancies, and route approvals. Finance teams go from days of manual work to minutes of oversight.</p>
+        </div>
+        <div class="use-case">
+          <h3>Customer onboarding</h3>
+          <p>Agents collect documents, verify information, set up accounts, and guide new customers through each step&mdash;escalating to a human only when needed.</p>
+        </div>
+        <div class="use-case">
+          <h3>Support triage &amp; resolution</h3>
+          <p>Agents classify incoming tickets, pull relevant context from your knowledge base, draft responses, and resolve common issues autonomously.</p>
+        </div>
+        <div class="use-case">
+          <h3>Document review &amp; compliance</h3>
+          <p>Agents read contracts, flag non-standard clauses, check against policy, and generate compliance summaries&mdash;freeing your legal team for judgment calls.</p>
+        </div>
+        <div class="use-case">
+          <h3>Data pipeline monitoring</h3>
+          <p>Agents watch your data pipelines, detect anomalies, diagnose root causes, and either fix issues automatically or alert the right person with full context.</p>
+        </div>
+        <div class="use-case">
+          <h3>Internal knowledge assistant</h3>
+          <p>Agents that actually know your company&mdash;connected to your docs, wikis, and Slack&mdash;so employees get accurate answers instead of searching for hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sovereignty -->
+  <section id="sovereignty">
+    <div class="container">
+      <p class="section-label">Our approach</p>
+      <h2 class="section-title">AI that respects your data, your infrastructure, and your independence</h2>
+      <p class="section-subtitle">You shouldn't have to choose between cutting-edge AI and control over your own data. We built our stack so you don't have to.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">&#9618;</span>
+          <h3>Sovereign infrastructure</h3>
+          <p>Your agents run on infrastructure you control. Data processing, model inference, vector storage&mdash;nothing leaves your jurisdiction. You decide where your data lives, not your AI vendor.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9735;</span>
+          <h3>Open-source models</h3>
+          <p>We build on open-weight LLMs&mdash;Llama, Mistral, Qwen, and others. State-of-the-art performance, fully self-hosted. No black boxes, no vendor lock-in, no prompts routed through third-party APIs.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">&#9740;</span>
+          <h3>Privacy by design</h3>
+          <p>Regulatory compliance isn't a checkbox we tick at the end. Agent architectures are designed from day one with data minimization, purpose limitation, and audit trails built in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label text-center">How it works</p>
+      <h2 class="section-title text-center">From first call to agents in production</h2>
+      <p class="section-subtitle text-center mx-auto">Most clients have agents running within weeks, not months. Here's how we get there.</p>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <h3>Discover</h3>
+          <p>We map your workflows and identify where agents will have the highest ROI. No generic pitches&mdash;we go deep on your domain.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <h3>Build</h3>
+          <p>We design and develop your agents, connected to your tools and data. You see working demos within the first two weeks.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <h3>Deploy</h3>
+          <p>Agents go live on sovereign infrastructure with monitoring, guardrails, and human-in-the-loop escalation from day one.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <h3>Improve</h3>
+          <p>We track performance, gather feedback, and ship improvements continuously. Your agents compound in value over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About mi8</p>
+      <h2 class="section-title">Built on a decade of shipping enterprise software</h2>
+      <div class="about-content">
+        <p>mi8 started as a mobile consultancy, shipping mission-critical apps for major enterprise brands. We learned what it takes to build software that companies actually rely on: reliability, observability, clear communication, and zero tolerance for "it works on my machine."</p>
+        <p>Now we apply that discipline to managed AI agents. We build on open-source models, deploy on sovereign infrastructure, and design every agent with privacy at the core. No vendor lock-in, no black boxes, no data leaving your control.</p>
+        <p>We don't sell engineering hours or hand over prototypes. We run agents in production, take responsibility for their performance, and charge based on the value they deliver.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" style="background: var(--bg-secondary);">
+    <div class="container">
+      <p class="section-label">Blog</p>
+      <h2 class="section-title">Latest thinking</h2>
+      <p class="section-subtitle">Notes on AI agents, architecture, and the evolving enterprise.</p>
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="blog-card">
+            <p class="blog-card-date">
+              {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </a>
+        ))}
+      </div>
+      <div class="blog-more">
+        <a href="/blog" class="btn btn-outline">All posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>Tell us about your workflow</h2>
+      <p class="section-subtitle mx-auto" style="margin-bottom: 2rem;">A 30-minute discovery call is all it takes. We'll map your workflow, identify where an agent fits, and tell you honestly whether it makes sense.</p>
+      <a href="mailto:info@mi8.be?subject=Discovery%20call%20request" class="btn btn-primary">Book a discovery call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">mi8 SRL</p>
+          <p>Chauss&eacute;e de Namur 31/5, 1457 Walhain, Belgium<br />VAT BE 0535.711.105</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@mi8.be">info@mi8.be</a>
+          <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 mi8 SRL. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+  </script>
+</Layout>

@@ -1,0 +1,32 @@
+---
+---
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+  <span class="icon-sun">&#9728;</span>
+  <span class="icon-moon">&#9790;</span>
+</button>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function getPreferred() {
+      const stored = localStorage.getItem('theme');
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function apply(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    apply(getPreferred());
+
+    toggle.addEventListener('click', function () {
+      const current = html.getAttribute('data-theme');
+      apply(current === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>

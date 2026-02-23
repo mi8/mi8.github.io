@@ -1,0 +1,84 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ThemeToggle from '../../../components/ThemeToggle.astro';
+import LanguagePicker from '../../../components/LanguagePicker.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../i18n/ui';
+
+const lang = 'fr' as const;
+const posts = (await getCollection('blog-fr'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title={t(lang, 'blogPage.title')} description={t(lang, 'blogPage.subtitle')} lang={lang}>
+  <nav class="nav">
+    <div class="container">
+      <a href="/fr" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/fr/#services">{t(lang, 'nav.services')}</a></li>
+        <li><a href="/fr/#use-cases">{t(lang, 'nav.useCases')}</a></li>
+        <li><a href="/fr/#sovereignty">{t(lang, 'nav.approach')}</a></li>
+        <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang={lang} path="/blog" />
+        <ThemeToggle />
+        <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="blog-header">
+    <div class="container">
+      <p class="section-label">{t(lang, 'blog.label')}</p>
+      <h1>{t(lang, 'blogPage.heading')}</h1>
+      <p class="section-subtitle">{t(lang, 'blogPage.subtitle')}</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/fr/blog/${post.slug}`} class="blog-card">
+            <p class="blog-card-date">
+              {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="blog-card-link">{t(lang, 'blog.readMore')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">{t(lang, 'footer.company')}</p>
+          <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte">info@mi8.be</a>
+          <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>{t(lang, 'footer.copyright')}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+  </script>
+</Layout>

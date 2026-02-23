@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Blog — mi8" description="Notes on AI agents, architecture, and the evolving enterprise." lang="en">
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#use-cases">Use cases</a></li>
+        <li><a href="/#sovereignty">Our approach</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang="en" path="/blog" />
+        <ThemeToggle />
+        <a href="mailto:info@mi8.be?subject=Discovery%20call%20request" class="btn btn-primary">Book a discovery call</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="blog-header">
+    <div class="container">
+      <p class="section-label">Blog</p>
+      <h1>Latest thinking</h1>
+      <p class="section-subtitle">Notes on AI agents, architecture, and the evolving enterprise.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="blog-card">
+            <p class="blog-card-date">
+              {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="blog-card-link">Read more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">mi8 SRL</p>
+          <p>Chauss&eacute;e de Namur 31/5, 1457 Walhain, Belgium<br />VAT BE 0535.711.105</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@mi8.be?subject=Discovery%20call%20request">info@mi8.be</a>
+          <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 mi8 SRL. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+  </script>
+</Layout>

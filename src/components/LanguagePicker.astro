@@ -1,0 +1,78 @@
+---
+interface Props {
+  lang: 'en' | 'fr';
+  path?: string;
+}
+
+const { lang, path = '/' } = Astro.props;
+
+function getAlternatePath(targetLang: 'en' | 'fr'): string {
+  if (targetLang === 'fr') {
+    return `/fr${path === '/' ? '' : path}` || '/fr';
+  }
+  const stripped = path.replace(/^\/fr\/?/, '/');
+  return stripped || '/';
+}
+
+const languages = [
+  { code: 'en' as const, label: 'English' },
+  { code: 'fr' as const, label: 'Français' },
+];
+
+const current = languages.find(l => l.code === lang)!;
+---
+
+<div class="lang-picker">
+  <button class="lang-picker-btn" aria-label="Change language" aria-expanded="false">
+    {current.code === 'en' ? (
+      <span class="lang-flag"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><rect fill="#012169" width="60" height="30"/><path d="m0 0 60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
+    ) : (
+      <span class="lang-flag"><svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><rect fill="#002395" width="1" height="2"/><rect fill="#fff" x="1" width="1" height="2"/><rect fill="#ED2939" x="2" width="1" height="2"/></svg></span>
+    )}
+    <span>{current.label}</span>
+    <span class="lang-chevron">&#9662;</span>
+  </button>
+  <div class="lang-picker-dropdown">
+    {languages.map((l) => (
+      <a
+        href={l.code === lang ? '#' : getAlternatePath(l.code)}
+        class:list={['lang-picker-option', { active: l.code === lang }]}
+        aria-current={l.code === lang ? 'true' : undefined}
+      >
+        {l.code === 'en' ? (
+          <span class="lang-flag"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><rect fill="#012169" width="60" height="30"/><path d="m0 0 60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
+        ) : (
+          <span class="lang-flag"><svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><rect fill="#002395" width="1" height="2"/><rect fill="#fff" x="1" width="1" height="2"/><rect fill="#ED2939" x="2" width="1" height="2"/></svg></span>
+        )}
+        <span>{l.label}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    document.addEventListener('click', function (e) {
+      var picker = e.target.closest('.lang-picker');
+      var btn = e.target.closest('.lang-picker-btn');
+      // Close all other open pickers
+      document.querySelectorAll('.lang-picker.open').forEach(function (p) {
+        if (p !== picker) {
+          p.classList.remove('open');
+          p.querySelector('.lang-picker-btn').setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Toggle clicked picker
+      if (btn && picker) {
+        picker.classList.toggle('open');
+        btn.setAttribute('aria-expanded', picker.classList.contains('open'));
+      } else if (!picker) {
+        // Clicked outside — close all
+        document.querySelectorAll('.lang-picker.open').forEach(function (p) {
+          p.classList.remove('open');
+          p.querySelector('.lang-picker-btn').setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  })();
+</script>
