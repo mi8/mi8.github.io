@@ -38,7 +38,7 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
       <div class="nav-right">
         <LanguagePicker lang={lang} path={blogPath} />
         <ThemeToggle />
-        <a href="mailto:info@mi8.be?subject=Discovery%20call%20request" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href={localePath(lang, '/#contact')} class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>
@@ -64,7 +64,7 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
           <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
         </div>
         <div class="footer-links">
-          <a href="mailto:info@mi8.be?subject=Discovery%20call%20request">info@mi8.be</a>
+          <a href="mailto:contact@mi8.be?subject=Discovery%20call%20request">contact@mi8.be</a>
           <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

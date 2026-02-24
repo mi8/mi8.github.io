@@ -29,7 +29,7 @@ const posts = (await getCollection('blog-fr'))
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/" />
         <ThemeToggle />
-        <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href="#contact" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>
@@ -45,7 +45,7 @@ const posts = (await getCollection('blog-fr'))
         <h1>{t(lang, 'hero.title.before')}<span class="accent">{t(lang, 'hero.title.accent')}</span>{t(lang, 'hero.title.after')}</h1>
         <p>{t(lang, 'hero.description')}</p>
         <div class="hero-actions">
-          <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
+          <a href="#contact" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
           <a href="#use-cases" class="btn btn-outline">{t(lang, 'hero.secondary')}</a>
         </div>
       </div>
@@ -207,12 +207,37 @@ const posts = (await getCollection('blog-fr'))
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container text-center">
-      <h2>{t(lang, 'cta.title')}</h2>
-      <p class="section-subtitle mx-auto" style="margin-bottom: 2rem;">{t(lang, 'cta.description')}</p>
-      <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'cta.button')}</a>
+  <!-- Contact -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-text">
+          <h2>{t(lang, 'cta.title')}</h2>
+          <p class="section-subtitle">{t(lang, 'cta.description')}</p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/mgolpyor" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">{t(lang, 'cta.name')}</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">{t(lang, 'cta.email')}</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company">{t(lang, 'cta.company')}</label>
+            <input type="text" id="company" name="company" />
+          </div>
+          <div class="form-group">
+            <label for="message">{t(lang, 'cta.message')}</label>
+            <textarea id="message" name="message" rows="4" placeholder={t(lang, 'cta.message')} required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary contact-submit">{t(lang, 'cta.button')}</button>
+          <p class="contact-feedback" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -225,7 +250,7 @@ const posts = (await getCollection('blog-fr'))
           <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
         </div>
         <div class="footer-links">
-          <a href="mailto:info@mi8.be">info@mi8.be</a>
+          <a href="mailto:contact@mi8.be">contact@mi8.be</a>
           <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
@@ -240,5 +265,39 @@ const posts = (await getCollection('blog-fr'))
     document.getElementById('nav-toggle').addEventListener('click', function () {
       document.getElementById('nav-links').classList.toggle('open');
     });
+
+    (function () {
+      var form = document.querySelector('.contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.contact-submit');
+        var feedback = form.querySelector('.contact-feedback');
+        var originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Envoi en cours\u2026';
+        feedback.textContent = '';
+        feedback.className = 'contact-feedback';
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            feedback.textContent = 'Message envoy\u00e9\u00a0! Nous vous recontacterons rapidement.';
+            feedback.className = 'contact-feedback success';
+            form.reset();
+          } else {
+            throw new Error('error');
+          }
+        }).catch(function () {
+          feedback.textContent = 'Une erreur est survenue. Contactez-nous \u00e0 contact@mi8.be.';
+          feedback.className = 'contact-feedback error';
+        }).finally(function () {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        });
+      });
+    })();
   </script>
 </Layout>

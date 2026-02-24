@@ -27,7 +27,7 @@ const posts = (await getCollection('blog-fr'))
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/blog" />
         <ThemeToggle />
-        <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href="/fr/#contact" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>
@@ -65,7 +65,7 @@ const posts = (await getCollection('blog-fr'))
           <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
         </div>
         <div class="footer-links">
-          <a href="mailto:info@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte">info@mi8.be</a>
+          <a href="mailto:contact@mi8.be?subject=Demande%20d%27appel%20d%C3%A9couverte">contact@mi8.be</a>
           <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

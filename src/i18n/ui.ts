@@ -90,10 +90,17 @@ export const ui = {
     'blog.allPosts': 'All posts',
     'blog.backToBlog': '\u2190 Back to blog',
 
-    // CTA
+    // CTA / Contact form
     'cta.title': 'Tell us about your workflow',
     'cta.description': "A 30-minute discovery call is all it takes. We'll map your workflow, identify where an agent fits, and tell you honestly whether it makes sense.",
-    'cta.button': 'Book a discovery call',
+    'cta.button': 'Send message',
+    'cta.name': 'Name',
+    'cta.email': 'Email',
+    'cta.company': 'Company',
+    'cta.message': 'Tell us about your workflow\u2026',
+    'cta.sending': 'Sending\u2026',
+    'cta.success': 'Message sent! We\u2019ll be in touch shortly.',
+    'cta.error': 'Something went wrong. Please email us at contact@mi8.be.',
 
     // Footer
     'footer.company': 'mi8 SRL',
@@ -194,10 +201,17 @@ export const ui = {
     'blog.allPosts': 'Tous les articles',
     'blog.backToBlog': '\u2190 Retour au blog',
 
-    // CTA
+    // CTA / Contact form
     'cta.title': 'Parlez-nous de votre workflow',
     'cta.description': 'Un appel d\u00e9couverte de 30 minutes suffit. Nous cartographierons votre workflow, identifierons o\u00f9 un agent s\u2019int\u00e8gre et vous dirons honn\u00eatement si cela a du sens.',
-    'cta.button': 'R\u00e9server un appel d\u00e9couverte',
+    'cta.button': 'Envoyer le message',
+    'cta.name': 'Nom',
+    'cta.email': 'Email',
+    'cta.company': 'Entreprise',
+    'cta.message': 'Parlez-nous de votre workflow\u2026',
+    'cta.sending': 'Envoi en cours\u2026',
+    'cta.success': 'Message envoy\u00e9\u00a0! Nous vous recontacterons rapidement.',
+    'cta.error': 'Une erreur est survenue. Contactez-nous \u00e0 contact@mi8.be.',
 
     // Footer
     'footer.company': 'mi8 SRL',
