@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { t } from '../../i18n/ui';
+
+const lang = 'fr' as const;
+---
+
+<Layout title={t(lang, 'privacy.title')} lang={lang}>
+  <nav class="nav">
+    <div class="container">
+      <a href="/fr" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/fr/#services">{t(lang, 'nav.services')}</a></li>
+        <li><a href="/fr/#use-cases">{t(lang, 'nav.useCases')}</a></li>
+        <li><a href="/fr/#sovereignty">{t(lang, 'nav.approach')}</a></li>
+        <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang={lang} path="/privacy" />
+        <ThemeToggle />
+        <a href="/fr/#contact" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="blog-post">
+    <div class="container">
+      <a href="/fr" class="blog-back">&larr; Retour &agrave; l&rsquo;accueil</a>
+      <header class="blog-post-header">
+        <h1>{t(lang, 'privacy.heading')}</h1>
+        <p class="blog-post-meta">{t(lang, 'privacy.lastUpdated')}</p>
+      </header>
+      <div class="blog-post-content">
+        <h2>Qui sommes-nous</h2>
+        <p>mi8 SRL, Chauss&eacute;e de Namur 31/5, 1457 Walhain, Belgique. TVA BE 0535.711.105. Contact&nbsp;: <a href="mailto:contact@mi8.be">contact@mi8.be</a>.</p>
+
+        <h2>&Eacute;valuation de maturit&eacute; IA</h2>
+        <p>Notre agent d&rsquo;&eacute;valuation fonctionne enti&egrave;rement sur une infrastructure souveraine situ&eacute;e dans l&rsquo;UE, propuls&eacute;e par des mod&egrave;les open source. Voici comment vos donn&eacute;es sont trait&eacute;es pendant l&rsquo;&eacute;valuation&nbsp;:</p>
+        <ul>
+          <li><strong>Aucun stockage de conversation.</strong> Vos messages sont trait&eacute;s en temps r&eacute;el pour g&eacute;n&eacute;rer des r&eacute;ponses. Ils ne sont ni enregistr&eacute;s, ni stock&eacute;s, ni utilis&eacute;s pour l&rsquo;entra&icirc;nement. Lorsque vous fermez la page, la conversation dispara&icirc;t.</li>
+          <li><strong>Aucune donn&eacute;e personnelle collect&eacute;e.</strong> Nous ne demandons ni votre nom, ni votre email, ni aucune information identifiante pendant le chat. Aucun cookie ni pixel de suivi n&rsquo;est utilis&eacute; sur la page d&rsquo;&eacute;valuation.</li>
+          <li><strong>Adresses IP.</strong> Votre adresse IP est trait&eacute;e temporairement en m&eacute;moire serveur pour la limitation de d&eacute;bit (pr&eacute;vention des abus). Elle n&rsquo;est pas enregistr&eacute;e sur disque et est effac&eacute;e au red&eacute;marrage du serveur.</li>
+          <li><strong>Le partage est votre choix.</strong> &Agrave; la fin de l&rsquo;&eacute;valuation, vous pouvez choisir d&rsquo;envoyer les r&eacute;sultats par email &agrave; mi8 ou de les copier dans votre presse-papiers. Cette action est enti&egrave;rement facultative et initi&eacute;e par vous&mdash;nous ne recevons automatiquement aucune donn&eacute;e de conversation.</li>
+        </ul>
+
+        <h2>Formulaire de contact</h2>
+        <p>Le formulaire de contact de notre page d&rsquo;accueil est trait&eacute; par <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> (bas&eacute; aux &Eacute;tats-Unis). Lorsque vous soumettez le formulaire, votre nom, email, entreprise et message sont transmis &agrave; Formspree puis nous sont transf&eacute;r&eacute;s par email. Formspree agit en tant que sous-traitant conform&eacute;ment &agrave; sa <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">politique de confidentialit&eacute;</a>. Nous utilisons ces donn&eacute;es uniquement pour r&eacute;pondre &agrave; votre demande.</p>
+
+        <h2>H&eacute;bergement du site</h2>
+        <p>Ce site est h&eacute;berg&eacute; sur <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. GitHub peut collecter des journaux techniques (adresses IP, type de navigateur) tels que d&eacute;crits dans sa <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">d&eacute;claration de confidentialit&eacute;</a>. Nous utilisons Google Fonts pour la typographie, ce qui implique des requ&ecirc;tes vers les serveurs de Google lors du chargement de la page.</p>
+
+        <h2>Vos droits</h2>
+        <p>En vertu du RGPD, vous disposez du droit d&rsquo;acc&egrave;s, de rectification, d&rsquo;effacement, de limitation, de portabilit&eacute; de vos donn&eacute;es personnelles, ainsi que du droit d&rsquo;opposition &agrave; leur traitement. &Eacute;tant donn&eacute; que nous collectons un minimum de donn&eacute;es, la plupart de ces droits sont satisfaits par conception. Pour toute demande, contactez-nous &agrave; <a href="mailto:contact@mi8.be">contact@mi8.be</a>.</p>
+
+        <h2>Modifications</h2>
+        <p>Nous pouvons mettre &agrave; jour cette politique au fur et &agrave; mesure de l&rsquo;&eacute;volution de nos services. La date en haut de cette page indique la derni&egrave;re r&eacute;vision.</p>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">{t(lang, 'footer.company')}</p>
+          <p>{t(lang, 'footer.address')}<br />{t(lang, 'footer.vat')}</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:contact@mi8.be">contact@mi8.be</a>
+          <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>{t(lang, 'footer.copyright')}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+  </script>
+</Layout>

@@ -128,7 +128,14 @@ export const ui = {
     'assessment.lead.sending': 'Sending\u2026',
     'assessment.lead.success': 'Sent! Check your inbox shortly.',
     'assessment.lead.error': 'Something went wrong. Please email us at contact@mi8.be.',
-    'assessment.disclaimer': 'This agent runs on sovereign infrastructure powered by open-source models. Your conversation is not stored.',
+    'assessment.lead.consent': 'I agree to share this assessment and my contact details with mi8.',
+    'assessment.disclaimer': 'Sovereign infrastructure \u00b7 Open-source models \u00b7 No conversation data stored \u00b7',
+    'assessment.disclaimerLink': 'Privacy policy',
+
+    // Privacy
+    'privacy.title': 'Privacy Policy \u2014 mi8',
+    'privacy.heading': 'Privacy Policy',
+    'privacy.lastUpdated': 'Last updated: February 2026',
 
     // Meta
     'meta.description': 'mi8 builds, deploys, and operates managed AI agents for European enterprises. Open-source models, EU infrastructure, privacy by design.',
@@ -256,7 +263,14 @@ export const ui = {
     'assessment.lead.sending': 'Envoi en cours\u2026',
     'assessment.lead.success': 'Envoy\u00e9\u00a0! Consultez votre bo\u00eete de r\u00e9ception.',
     'assessment.lead.error': 'Une erreur est survenue. Contactez-nous \u00e0 contact@mi8.be.',
-    'assessment.disclaimer': 'Cet agent fonctionne sur une infrastructure souveraine propuls\u00e9e par des mod\u00e8les open source. Votre conversation n\u2019est pas stock\u00e9e.',
+    'assessment.lead.consent': 'J\u2019accepte de partager cette \u00e9valuation et mes coordonn\u00e9es avec mi8.',
+    'assessment.disclaimer': 'Infrastructure souveraine \u00b7 Mod\u00e8les open source \u00b7 Aucune conversation stock\u00e9e \u00b7',
+    'assessment.disclaimerLink': 'Politique de confidentialit\u00e9',
+
+    // Privacy
+    'privacy.title': 'Politique de confidentialit\u00e9 \u2014 mi8',
+    'privacy.heading': 'Politique de confidentialit\u00e9',
+    'privacy.lastUpdated': 'Derni\u00e8re mise \u00e0 jour\u00a0: f\u00e9vrier 2026',
 
     // Meta
     'meta.description': 'mi8 con\u00e7oit, d\u00e9ploie et op\u00e8re des agents IA manag\u00e9s pour les entreprises europ\u00e9ennes. Mod\u00e8les open source, infrastructure europ\u00e9enne, respect de la vie priv\u00e9e d\u00e8s la conception.',

@@ -53,7 +53,7 @@ const lang = 'fr' as const;
         <button class="chat-send-btn" id="chat-send">{t(lang, 'assessment.send')}</button>
       </div>
     </div>
-    <div class="chat-disclaimer">{t(lang, 'assessment.disclaimer')}</div>
+    <div class="chat-disclaimer">{t(lang, 'assessment.disclaimer')} <a href="/fr/privacy">{t(lang, 'assessment.disclaimerLink')}</a></div>
   </div>
 
   <script is:inline define:vars={{
@@ -66,6 +66,7 @@ const lang = 'fr' as const;
     LEAD_SENDING: t(lang, 'assessment.lead.sending'),
     LEAD_SUCCESS: t(lang, 'assessment.lead.success'),
     LEAD_ERROR: t(lang, 'assessment.lead.error'),
+    LEAD_CONSENT: t(lang, 'assessment.lead.consent'),
   }}>
     // ── Configuration ──
     var AGENT_API = 'https://agent.mi8.be/api/chat';
@@ -153,6 +154,10 @@ const lang = 'fr' as const;
             '<input type="email" name="email" placeholder="' + LEAD_EMAIL + '" required />' +
             '<input type="hidden" name="assessment" />' +
             '<input type="hidden" name="_subject" value="\u00c9valuation IA" />' +
+            '<label class="lead-consent-label">' +
+              '<input type="checkbox" name="consent" required />' +
+              '<span>' + LEAD_CONSENT + '</span>' +
+            '</label>' +
             '<button type="submit" class="lead-submit">' + LEAD_SUBMIT + '</button>' +
             '<p class="lead-feedback" aria-live="polite"></p>' +
           '</form>' +
@@ -251,7 +256,6 @@ const lang = 'fr' as const;
               if (parsed.done) {
                 messages.push({ role: 'assistant', content: fullText });
 
-                // Check if this looks like a final assessment
                 var lower = fullText.toLowerCase();
                 if (lower.includes('discovery call') || lower.includes('appel d\u00e9couverte') ||
                     lower.includes('next step') || lower.includes('prochaine \u00e9tape') ||
@@ -267,7 +271,6 @@ const lang = 'fr' as const;
           }
         }
 
-        // Handle case where stream ends without explicit done signal
         if (fullText && !messages.find(function (m) { return m.role === 'assistant' && m.content === fullText; })) {
           messages.push({ role: 'assistant', content: fullText });
         }
@@ -294,7 +297,6 @@ const lang = 'fr' as const;
       }
     });
 
-    // ── Initial focus ──
     chatInput.focus();
   </script>
 </Layout>
