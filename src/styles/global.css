@@ -1,3 +1,41 @@
+/* --- Self-hosted Fonts --- */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ============================================
    mi8.be — Global Styles
    Cyberpunk-inspired, light/dark theme support
@@ -270,22 +308,28 @@ section {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    flex-direction: column;
     background: var(--nav-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
     gap: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
   }
 
   .nav-links.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-links a {
@@ -1276,7 +1320,7 @@ section {
   gap: 0.75rem;
 }
 
-.chat-input-inner input {
+.chat-input-inner textarea {
   flex: 1;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -1286,15 +1330,19 @@ section {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  resize: none;
+  overflow-y: hidden;
+  max-height: 120px;
+  line-height: 1.5;
 }
 
-.chat-input-inner input:focus {
+.chat-input-inner textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
 }
 
-.chat-input-inner input:disabled {
+.chat-input-inner textarea:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }

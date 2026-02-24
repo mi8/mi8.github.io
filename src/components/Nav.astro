@@ -1,0 +1,64 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import LanguagePicker from './LanguagePicker.astro';
+import type { Lang } from '../i18n/ui';
+import { t, localePath } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const isHome = path === '/';
+const sectionHref = (anchor: string) => isHome ? anchor : localePath(lang, '/' + anchor);
+---
+
+<nav class="nav">
+  <div class="container">
+    <a href={localePath(lang, '/')} class="nav-logo">
+      <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+      <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label={lang === 'fr' ? 'Ouvrir le menu' : 'Toggle menu'} aria-expanded="false">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href={sectionHref('#services')}>{t(lang, 'nav.services')}</a></li>
+      <li><a href={sectionHref('#use-cases')}>{t(lang, 'nav.useCases')}</a></li>
+      <li><a href={sectionHref('#sovereignty')}>{t(lang, 'nav.approach')}</a></li>
+      <li><a href={localePath(lang, '/blog')}>{t(lang, 'nav.blog')}</a></li>
+      <li><a href={sectionHref('#contact')}>{t(lang, 'assessment.nav')}</a></li>
+      <li class="nav-links-cta"><a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a></li>
+    </ul>
+    <div class="nav-right">
+      <LanguagePicker lang={lang} path={path} />
+      <ThemeToggle />
+      <a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var links = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', function () {
+      var isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('#nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-links') && !e.target.closest('.nav-toggle')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
