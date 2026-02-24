@@ -29,12 +29,14 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
         <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
         <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
       </a>
-      <ul class="nav-links">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
         <li><a href={localePath(lang, '/#services')}>{t(lang, 'nav.services')}</a></li>
         <li><a href={localePath(lang, '/#use-cases')}>{t(lang, 'nav.useCases')}</a></li>
         <li><a href={localePath(lang, '/#sovereignty')}>{t(lang, 'nav.approach')}</a></li>
         <li><a href={localePath(lang, '/blog')}>{t(lang, 'nav.blog')}</a></li>
         <li><a href={localePath(lang, '/#contact')}>{t(lang, 'assessment.nav')}</a></li>
+        <li class="nav-links-cta"><a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path={blogPath} />
@@ -75,4 +77,15 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
       </div>
     </div>
   </footer>
+
+  <script is:inline>
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+    document.querySelectorAll('#nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('nav-links').classList.remove('open');
+      });
+    });
+  </script>
 </Layout>

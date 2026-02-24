@@ -21,6 +21,7 @@ const lang = 'fr' as const;
         <li><a href="/fr/#sovereignty">{t(lang, 'nav.approach')}</a></li>
         <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
         <li><a href="/fr/#contact">{t(lang, 'assessment.nav')}</a></li>
+        <li class="nav-links-cta"><a href="/fr/assessment" class="btn btn-primary">{t(lang, 'nav.cta')}</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/assessment" />
@@ -88,6 +89,60 @@ const lang = 'fr' as const;
     document.getElementById('nav-toggle').addEventListener('click', function () {
       document.getElementById('nav-links').classList.toggle('open');
     });
+    document.querySelectorAll('#nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('nav-links').classList.remove('open');
+      });
+    });
+
+    // ── Markdown rendering ──
+    function renderMarkdown(text) {
+      var s = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+      var codeBlocks = [];
+      s = s.replace(/```(?:\w*)\n([\s\S]*?)```/g, function (m, code) {
+        codeBlocks.push('<pre><code>' + code + '</code></pre>');
+        return '%%CB' + (codeBlocks.length - 1) + '%%';
+      });
+      var inlineCodes = [];
+      s = s.replace(/`([^`]+)`/g, function (m, code) {
+        inlineCodes.push('<code>' + code + '</code>');
+        return '%%IC' + (inlineCodes.length - 1) + '%%';
+      });
+      s = s.replace(/^### (.+)$/gm, '<strong>$1</strong>');
+      s = s.replace(/^## (.+)$/gm, '<strong>$1</strong>');
+      s = s.replace(/^# (.+)$/gm, '<strong>$1</strong>');
+      s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      s = s.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, t, url) {
+        if (/^https?:\/\//i.test(url) || url.charAt(0) === '/' || url.charAt(0) === '#') {
+          return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + t + '</a>';
+        }
+        return t;
+      });
+      s = s.replace(/(^|\n)((?:- .+(?:\n|$))+)/g, function (m, pre, list) {
+        var items = list.trim().split('\n').map(function (li) {
+          return '<li>' + li.replace(/^- /, '') + '</li>';
+        }).join('');
+        return pre + '<ul>' + items + '</ul>';
+      });
+      s = s.replace(/(^|\n)((?:\d+\. .+(?:\n|$))+)/g, function (m, pre, list) {
+        var items = list.trim().split('\n').map(function (li) {
+          return '<li>' + li.replace(/^\d+\. /, '') + '</li>';
+        }).join('');
+        return pre + '<ol>' + items + '</ol>';
+      });
+      s = s.replace(/%%IC(\d+)%%/g, function (m, i) {
+        return inlineCodes[parseInt(i)];
+      });
+      s = s.replace(/%%CB(\d+)%%/g, function (m, i) {
+        return codeBlocks[parseInt(i)];
+      });
+      return s;
+    }
 
     // ── Helpers ──
     function scrollToBottom() {
@@ -104,7 +159,11 @@ const lang = 'fr' as const;
 
       var bubble = document.createElement('div');
       bubble.className = 'chat-msg-bubble';
-      bubble.textContent = text;
+      if (role === 'agent') {
+        bubble.innerHTML = renderMarkdown(text);
+      } else {
+        bubble.textContent = text;
+      }
 
       div.appendChild(avatar);
       div.appendChild(bubble);
@@ -251,7 +310,7 @@ const lang = 'fr' as const;
               var parsed = JSON.parse(json);
               if (parsed.token) {
                 fullText += parsed.token;
-                bubble.textContent = fullText;
+                bubble.innerHTML = renderMarkdown(fullText);
                 scrollToBottom();
               }
               if (parsed.done) {

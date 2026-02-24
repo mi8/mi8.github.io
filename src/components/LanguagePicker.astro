@@ -29,7 +29,7 @@ const current = languages.find(l => l.code === lang)!;
     ) : (
       <span class="lang-flag"><svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><rect fill="#002395" width="1" height="2"/><rect fill="#fff" x="1" width="1" height="2"/><rect fill="#ED2939" x="2" width="1" height="2"/></svg></span>
     )}
-    <span>{current.label}</span>
+    <span class="lang-label">{current.label}</span>
     <span class="lang-chevron">&#9662;</span>
   </button>
   <div class="lang-picker-dropdown">
