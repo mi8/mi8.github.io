@@ -113,6 +113,23 @@ export const ui = {
     'blogPage.heading': 'Latest thinking',
     'blogPage.subtitle': 'Notes on AI agents, architecture, and the evolving enterprise.',
 
+    // Assessment
+    'assessment.title': 'AI Readiness Assessment \u2014 mi8',
+    'assessment.heading': 'AI Readiness Assessment',
+    'assessment.subtitle': 'Chat with our AI agent to discover where automation could transform your business.',
+    'assessment.nav': 'Try our agent',
+    'assessment.inputPlaceholder': 'Type your message\u2026',
+    'assessment.send': 'Send',
+    'assessment.typing': 'Agent is thinking\u2026',
+    'assessment.lead.heading': 'Want us to email you this assessment?',
+    'assessment.lead.name': 'Name',
+    'assessment.lead.email': 'Email',
+    'assessment.lead.submit': 'Send my assessment',
+    'assessment.lead.sending': 'Sending\u2026',
+    'assessment.lead.success': 'Sent! Check your inbox shortly.',
+    'assessment.lead.error': 'Something went wrong. Please email us at contact@mi8.be.',
+    'assessment.disclaimer': 'This agent runs on sovereign infrastructure powered by open-source models. Your conversation is not stored.',
+
     // Meta
     'meta.description': 'mi8 builds, deploys, and operates managed AI agents for European enterprises. Open-source models, EU infrastructure, privacy by design.',
     'meta.title': 'mi8 \u2014 Managed AI Agents for the Enterprise',
@@ -223,6 +240,23 @@ export const ui = {
     'blogPage.title': 'Blog \u2014 mi8',
     'blogPage.heading': 'Derni\u00e8res r\u00e9flexions',
     'blogPage.subtitle': 'Notes sur les agents IA, l\u2019architecture et l\u2019entreprise en \u00e9volution.',
+
+    // Assessment
+    'assessment.title': '\u00c9valuation IA \u2014 mi8',
+    'assessment.heading': '\u00c9valuation de maturit\u00e9 IA',
+    'assessment.subtitle': 'Discutez avec notre agent IA pour d\u00e9couvrir o\u00f9 l\u2019automatisation pourrait transformer votre entreprise.',
+    'assessment.nav': 'Essayer notre agent',
+    'assessment.inputPlaceholder': '\u00c9crivez votre message\u2026',
+    'assessment.send': 'Envoyer',
+    'assessment.typing': 'L\u2019agent r\u00e9fl\u00e9chit\u2026',
+    'assessment.lead.heading': 'Voulez-vous recevoir cette \u00e9valuation par email\u00a0?',
+    'assessment.lead.name': 'Nom',
+    'assessment.lead.email': 'Email',
+    'assessment.lead.submit': 'Envoyer mon \u00e9valuation',
+    'assessment.lead.sending': 'Envoi en cours\u2026',
+    'assessment.lead.success': 'Envoy\u00e9\u00a0! Consultez votre bo\u00eete de r\u00e9ception.',
+    'assessment.lead.error': 'Une erreur est survenue. Contactez-nous \u00e0 contact@mi8.be.',
+    'assessment.disclaimer': 'Cet agent fonctionne sur une infrastructure souveraine propuls\u00e9e par des mod\u00e8les open source. Votre conversation n\u2019est pas stock\u00e9e.',
 
     // Meta
     'meta.description': 'mi8 con\u00e7oit, d\u00e9ploie et op\u00e8re des agents IA manag\u00e9s pour les entreprises europ\u00e9ennes. Mod\u00e8les open source, infrastructure europ\u00e9enne, respect de la vie priv\u00e9e d\u00e8s la conception.',

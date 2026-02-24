@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+import { t } from '../i18n/ui';
+
+const lang = 'en' as const;
+---
+
+<Layout title={t(lang, 'assessment.title')} description={t(lang, 'assessment.subtitle')} lang={lang}>
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img src="/logo_dark.svg" alt="mi8" width="48" height="32" class="logo-light-theme" />
+        <img src="/logo_light.svg" alt="mi8" width="48" height="32" class="logo-dark-theme" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#use-cases">Use cases</a></li>
+        <li><a href="/#sovereignty">Our approach</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <LanguagePicker lang={lang} path="/assessment" />
+        <ThemeToggle />
+        <a href="/#contact" class="btn btn-primary">Book a discovery call</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="assessment-page">
+    <div class="assessment-header">
+      <div class="container">
+        <p class="section-label">{t(lang, 'assessment.nav')}</p>
+        <h1>{t(lang, 'assessment.heading')}</h1>
+        <p>{t(lang, 'assessment.subtitle')}</p>
+      </div>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+      <div class="chat-messages" id="chat-messages"></div>
+    </div>
+
+    <div class="chat-input-bar">
+      <div class="chat-input-inner">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder={t(lang, 'assessment.inputPlaceholder')}
+          autocomplete="off"
+        />
+        <button class="chat-send-btn" id="chat-send">{t(lang, 'assessment.send')}</button>
+      </div>
+    </div>
+    <div class="chat-disclaimer">{t(lang, 'assessment.disclaimer')}</div>
+  </div>
+
+  <script is:inline define:vars={{
+    LANG: lang,
+    TYPING_TEXT: t(lang, 'assessment.typing'),
+    LEAD_HEADING: t(lang, 'assessment.lead.heading'),
+    LEAD_NAME: t(lang, 'assessment.lead.name'),
+    LEAD_EMAIL: t(lang, 'assessment.lead.email'),
+    LEAD_SUBMIT: t(lang, 'assessment.lead.submit'),
+    LEAD_SENDING: t(lang, 'assessment.lead.sending'),
+    LEAD_SUCCESS: t(lang, 'assessment.lead.success'),
+    LEAD_ERROR: t(lang, 'assessment.lead.error'),
+  }}>
+    // ── Configuration ──
+    var AGENT_API = 'https://agent.mi8.be/api/chat';
+    var MAX_MESSAGES = 15;
+
+    // ── State ──
+    var messages = [];
+    var isStreaming = false;
+    var conversationDone = false;
+
+    // ── DOM ──
+    var chatMessages = document.getElementById('chat-messages');
+    var chatContainer = document.getElementById('chat-container');
+    var chatInput = document.getElementById('chat-input');
+    var chatSend = document.getElementById('chat-send');
+
+    // ── Mobile nav toggle ──
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    // ── Helpers ──
+    function scrollToBottom() {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function addMessage(role, text) {
+      var div = document.createElement('div');
+      div.className = 'chat-msg ' + role;
+
+      var avatar = document.createElement('div');
+      avatar.className = 'chat-msg-avatar';
+      avatar.textContent = role === 'agent' ? 'mi8' : 'You';
+
+      var bubble = document.createElement('div');
+      bubble.className = 'chat-msg-bubble';
+      bubble.textContent = text;
+
+      div.appendChild(avatar);
+      div.appendChild(bubble);
+      chatMessages.appendChild(div);
+      scrollToBottom();
+      return bubble;
+    }
+
+    function showTyping() {
+      var div = document.createElement('div');
+      div.className = 'chat-typing';
+      div.id = 'typing-indicator';
+
+      var avatar = document.createElement('div');
+      avatar.className = 'chat-typing-avatar';
+      avatar.textContent = 'mi8';
+
+      var dots = document.createElement('div');
+      dots.className = 'chat-typing-dots';
+      dots.innerHTML = '<span></span><span></span><span></span>';
+
+      div.appendChild(avatar);
+      div.appendChild(dots);
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+
+    function hideTyping() {
+      var el = document.getElementById('typing-indicator');
+      if (el) el.remove();
+    }
+
+    function setInputEnabled(enabled) {
+      chatInput.disabled = !enabled;
+      chatSend.disabled = !enabled;
+      if (enabled) chatInput.focus();
+    }
+
+    // ── Lead capture ──
+    function showLeadForm(assessmentText) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'chat-lead-form';
+      wrapper.innerHTML =
+        '<div class="lead-card">' +
+          '<h3>' + LEAD_HEADING + '</h3>' +
+          '<form class="lead-fields" id="lead-form">' +
+            '<input type="text" name="name" placeholder="' + LEAD_NAME + '" required />' +
+            '<input type="email" name="email" placeholder="' + LEAD_EMAIL + '" required />' +
+            '<input type="hidden" name="assessment" />' +
+            '<input type="hidden" name="_subject" value="AI Readiness Assessment" />' +
+            '<button type="submit" class="lead-submit">' + LEAD_SUBMIT + '</button>' +
+            '<p class="lead-feedback" aria-live="polite"></p>' +
+          '</form>' +
+        '</div>';
+
+      chatMessages.appendChild(wrapper);
+      scrollToBottom();
+
+      var form = document.getElementById('lead-form');
+      form.querySelector('[name="assessment"]').value = assessmentText;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.lead-submit');
+        var feedback = form.querySelector('.lead-feedback');
+        var originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = LEAD_SENDING;
+        feedback.textContent = '';
+        feedback.className = 'lead-feedback';
+
+        fetch('https://formspree.io/f/mgolpyor', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            feedback.textContent = LEAD_SUCCESS;
+            feedback.className = 'lead-feedback success';
+            btn.disabled = true;
+            btn.textContent = originalText;
+          } else {
+            throw new Error('error');
+          }
+        }).catch(function () {
+          feedback.textContent = LEAD_ERROR;
+          feedback.className = 'lead-feedback error';
+          btn.disabled = false;
+          btn.textContent = originalText;
+        });
+      });
+    }
+
+    // ── Streaming chat ──
+    async function sendMessage(text) {
+      if (isStreaming || conversationDone) return;
+      if (messages.length >= MAX_MESSAGES) {
+        conversationDone = true;
+        setInputEnabled(false);
+        return;
+      }
+
+      messages.push({ role: 'user', content: text });
+      addMessage('user', text);
+      chatInput.value = '';
+      setInputEnabled(false);
+      isStreaming = true;
+      showTyping();
+
+      try {
+        var res = await fetch(AGENT_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: messages, lang: LANG })
+        });
+
+        hideTyping();
+
+        if (!res.ok) throw new Error('API error ' + res.status);
+
+        var bubble = addMessage('agent', '');
+        var fullText = '';
+        var reader = res.body.getReader();
+        var decoder = new TextDecoder();
+        var buffer = '';
+
+        while (true) {
+          var result = await reader.read();
+          if (result.done) break;
+
+          buffer += decoder.decode(result.value, { stream: true });
+          var lines = buffer.split('\n');
+          buffer = lines.pop();
+
+          for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line.startsWith('data: ')) continue;
+            var json = line.slice(6);
+            try {
+              var parsed = JSON.parse(json);
+              if (parsed.token) {
+                fullText += parsed.token;
+                bubble.textContent = fullText;
+                scrollToBottom();
+              }
+              if (parsed.done) {
+                messages.push({ role: 'assistant', content: fullText });
+
+                // Check if this looks like a final assessment (has numbered items or "next step")
+                var lower = fullText.toLowerCase();
+                if (lower.includes('discovery call') || lower.includes('appel découverte') ||
+                    lower.includes('next step') || lower.includes('prochaine étape') ||
+                    messages.length >= MAX_MESSAGES - 1) {
+                  conversationDone = true;
+                  setInputEnabled(false);
+                  showLeadForm(fullText);
+                }
+              }
+            } catch (e) {
+              // skip malformed JSON chunks
+            }
+          }
+        }
+
+        // Handle case where stream ends without explicit done signal
+        if (fullText && !messages.find(function (m) { return m.role === 'assistant' && m.content === fullText; })) {
+          messages.push({ role: 'assistant', content: fullText });
+        }
+      } catch (err) {
+        hideTyping();
+        addMessage('agent', 'Sorry, I encountered an error. Please try again or contact us at contact@mi8.be.');
+      }
+
+      isStreaming = false;
+      if (!conversationDone) setInputEnabled(true);
+    }
+
+    // ── Event listeners ──
+    chatSend.addEventListener('click', function () {
+      var text = chatInput.value.trim();
+      if (text) sendMessage(text);
+    });
+
+    chatInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        var text = chatInput.value.trim();
+        if (text) sendMessage(text);
+      }
+    });
+
+    // ── Initial focus ──
+    chatInput.focus();
+  </script>
+</Layout>
