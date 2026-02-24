@@ -34,12 +34,12 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
         <li><a href={localePath(lang, '/#use-cases')}>{t(lang, 'nav.useCases')}</a></li>
         <li><a href={localePath(lang, '/#sovereignty')}>{t(lang, 'nav.approach')}</a></li>
         <li><a href={localePath(lang, '/blog')}>{t(lang, 'nav.blog')}</a></li>
-        <li><a href={localePath(lang, '/assessment')}>{t(lang, 'assessment.nav')}</a></li>
+        <li><a href={localePath(lang, '/#contact')}>{t(lang, 'assessment.nav')}</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path={blogPath} />
         <ThemeToggle />
-        <a href={localePath(lang, '/#contact')} class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>

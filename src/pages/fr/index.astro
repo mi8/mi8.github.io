@@ -25,12 +25,12 @@ const posts = (await getCollection('blog-fr'))
         <li><a href="#use-cases">{t(lang, 'nav.useCases')}</a></li>
         <li><a href="#sovereignty">{t(lang, 'nav.approach')}</a></li>
         <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
-        <li><a href="/fr/assessment">{t(lang, 'assessment.nav')}</a></li>
+        <li><a href="/fr/#contact">{t(lang, 'assessment.nav')}</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/" />
         <ThemeToggle />
-        <a href="#contact" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href="/fr/assessment" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>
@@ -46,7 +46,7 @@ const posts = (await getCollection('blog-fr'))
         <h1>{t(lang, 'hero.title.before')}<span class="accent">{t(lang, 'hero.title.accent')}</span>{t(lang, 'hero.title.after')}</h1>
         <p>{t(lang, 'hero.description')}</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
+          <a href="/fr/assessment" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
           <a href="#use-cases" class="btn btn-outline">{t(lang, 'hero.secondary')}</a>
         </div>
       </div>

@@ -20,11 +20,12 @@ const lang = 'en' as const;
         <li><a href="/#use-cases">Use cases</a></li>
         <li><a href="/#sovereignty">Our approach</a></li>
         <li><a href="/blog">Blog</a></li>
+        <li><a href="/#contact">Contact us</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/assessment" />
         <ThemeToggle />
-        <a href="/#contact" class="btn btn-primary">Book a discovery call</a>
+        <a href="/assessment" class="btn btn-primary">Talk to our agent</a>
       </div>
     </div>
   </nav>
@@ -32,7 +33,7 @@ const lang = 'en' as const;
   <div class="assessment-page">
     <div class="assessment-header">
       <div class="container">
-        <p class="section-label">{t(lang, 'assessment.nav')}</p>
+        <p class="section-label">{t(lang, 'assessment.label')}</p>
         <h1>{t(lang, 'assessment.heading')}</h1>
         <p>{t(lang, 'assessment.subtitle')}</p>
       </div>
@@ -69,7 +70,7 @@ const lang = 'en' as const;
     LEAD_CONSENT: t(lang, 'assessment.lead.consent'),
   }}>
     // ── Configuration ──
-    var AGENT_API = 'https://agent.mi8.be/api/chat';
+    var AGENT_API = 'http://100.73.44.17:3000/api/chat';
     var MAX_MESSAGES = 15;
 
     // ── State ──

@@ -20,11 +20,12 @@ const lang = 'fr' as const;
         <li><a href="/fr/#use-cases">{t(lang, 'nav.useCases')}</a></li>
         <li><a href="/fr/#sovereignty">{t(lang, 'nav.approach')}</a></li>
         <li><a href="/fr/blog">{t(lang, 'nav.blog')}</a></li>
+        <li><a href="/fr/#contact">{t(lang, 'assessment.nav')}</a></li>
       </ul>
       <div class="nav-right">
         <LanguagePicker lang={lang} path="/assessment" />
         <ThemeToggle />
-        <a href="/fr/#contact" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
+        <a href="/fr/assessment" class="btn btn-primary">{t(lang, 'nav.cta')}</a>
       </div>
     </div>
   </nav>
@@ -32,7 +33,7 @@ const lang = 'fr' as const;
   <div class="assessment-page">
     <div class="assessment-header">
       <div class="container">
-        <p class="section-label">{t(lang, 'assessment.nav')}</p>
+        <p class="section-label">{t(lang, 'assessment.label')}</p>
         <h1>{t(lang, 'assessment.heading')}</h1>
         <p>{t(lang, 'assessment.subtitle')}</p>
       </div>
@@ -69,7 +70,7 @@ const lang = 'fr' as const;
     LEAD_CONSENT: t(lang, 'assessment.lead.consent'),
   }}>
     // ── Configuration ──
-    var AGENT_API = 'https://agent.mi8.be/api/chat';
+    var AGENT_API = 'http://100.73.44.17:3000/api/chat';
     var MAX_MESSAGES = 15;
 
     // ── State ──

@@ -12,7 +12,7 @@ export const ui = {
     'nav.useCases': 'Use cases',
     'nav.approach': 'Our approach',
     'nav.blog': 'Blog',
-    'nav.cta': 'Book a discovery call',
+    'nav.cta': 'Talk to our agent',
 
     // Hero
     'hero.label': 'Managed AI Agents',
@@ -20,7 +20,7 @@ export const ui = {
     'hero.title.accent': 'AI agents',
     'hero.title.after': " so you don't have to",
     'hero.description': 'We build, deploy, and operate AI agents for your business\u2014on sovereign infrastructure, powered by open-source models. Privacy-preserving by design. Your agents get smarter every month.',
-    'hero.cta': 'Book a discovery call',
+    'hero.cta': 'Talk to our agent',
     'hero.secondary': 'See use cases',
 
     // Services
@@ -92,7 +92,7 @@ export const ui = {
 
     // CTA / Contact form
     'cta.title': 'Tell us about your workflow',
-    'cta.description': "A 30-minute discovery call is all it takes. We'll map your workflow, identify where an agent fits, and tell you honestly whether it makes sense.",
+    'cta.description': "If you prefer talking to a human, a 30-minute discovery call is all it takes. We'll map your workflow, identify where an agent fits, and tell you honestly whether it makes sense.",
     'cta.button': 'Send message',
     'cta.name': 'Name',
     'cta.email': 'Email',
@@ -117,7 +117,8 @@ export const ui = {
     'assessment.title': 'AI Readiness Assessment \u2014 mi8',
     'assessment.heading': 'AI Readiness Assessment',
     'assessment.subtitle': 'Chat with our AI agent to discover where automation could transform your business.',
-    'assessment.nav': 'Try our agent',
+    'assessment.nav': 'Contact us',
+    'assessment.label': 'Talk to our agent',
     'assessment.inputPlaceholder': 'Type your message\u2026',
     'assessment.send': 'Send',
     'assessment.typing': 'Agent is thinking\u2026',
@@ -147,7 +148,7 @@ export const ui = {
     'nav.useCases': 'Cas d\u2019usage',
     'nav.approach': 'Notre approche',
     'nav.blog': 'Blog',
-    'nav.cta': 'R\u00e9server un appel',
+    'nav.cta': 'Parler \u00e0 notre agent',
 
     // Hero
     'hero.label': 'Agents IA manag\u00e9s',
@@ -155,7 +156,7 @@ export const ui = {
     'hero.title.accent': 'agents IA',
     'hero.title.after': ' pour que vous n\u2019ayez pas \u00e0 le faire',
     'hero.description': 'Nous concevons, d\u00e9ployons et op\u00e9rons des agents IA pour votre entreprise\u2014sur une infrastructure souveraine, propuls\u00e9s par des mod\u00e8les open source. Respect de la vie priv\u00e9e d\u00e8s la conception. Vos agents progressent chaque mois.',
-    'hero.cta': 'R\u00e9server un appel d\u00e9couverte',
+    'hero.cta': 'Parler \u00e0 notre agent',
     'hero.secondary': 'Voir les cas d\u2019usage',
 
     // Services
@@ -227,7 +228,7 @@ export const ui = {
 
     // CTA / Contact form
     'cta.title': 'Parlez-nous de votre workflow',
-    'cta.description': 'Un appel d\u00e9couverte de 30 minutes suffit. Nous cartographierons votre workflow, identifierons o\u00f9 un agent s\u2019int\u00e8gre et vous dirons honn\u00eatement si cela a du sens.',
+    'cta.description': 'Si vous pr\u00e9f\u00e9rez \u00e9changer avec un humain, un appel d\u00e9couverte de 30 minutes suffit. Nous cartographierons votre workflow, identifierons o\u00f9 un agent s\u2019int\u00e8gre et vous dirons honn\u00eatement si cela a du sens.',
     'cta.button': 'Envoyer le message',
     'cta.name': 'Nom',
     'cta.email': 'Email',
@@ -252,7 +253,8 @@ export const ui = {
     'assessment.title': '\u00c9valuation IA \u2014 mi8',
     'assessment.heading': '\u00c9valuation de maturit\u00e9 IA',
     'assessment.subtitle': 'Discutez avec notre agent IA pour d\u00e9couvrir o\u00f9 l\u2019automatisation pourrait transformer votre entreprise.',
-    'assessment.nav': 'Essayer notre agent',
+    'assessment.nav': 'Nous contacter',
+    'assessment.label': 'Parler \u00e0 notre agent',
     'assessment.inputPlaceholder': '\u00c9crivez votre message\u2026',
     'assessment.send': 'Envoyer',
     'assessment.typing': 'L\u2019agent r\u00e9fl\u00e9chit\u2026',
