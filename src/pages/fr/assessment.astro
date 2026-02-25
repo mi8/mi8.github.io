@@ -48,6 +48,7 @@ const lang = 'fr' as const;
     LEAD_SUCCESS: t(lang, 'assessment.lead.success'),
     LEAD_ERROR: t(lang, 'assessment.lead.error'),
     LEAD_CONSENT: t(lang, 'assessment.lead.consent'),
+    LEAD_SKIP: t(lang, 'assessment.lead.skip'),
   }}>
     // ── Configuration ──
     var AGENT_API = 'http://100.73.44.17:3000/api/chat';
@@ -138,7 +139,10 @@ const lang = 'fr' as const;
               '<input type="checkbox" name="consent" required />' +
               '<span>' + LEAD_CONSENT + '</span>' +
             '</label>' +
-            '<button type="submit" class="lead-submit">' + LEAD_SUBMIT + '</button>' +
+            '<div class="lead-actions">' +
+              '<button type="submit" class="lead-submit">' + LEAD_SUBMIT + '</button>' +
+              '<button type="button" class="lead-skip">' + LEAD_SKIP + '</button>' +
+            '</div>' +
             '<p class="lead-feedback" aria-live="polite"></p>' +
           '</form>' +
         '</div>';
@@ -148,6 +152,10 @@ const lang = 'fr' as const;
 
       var form = document.getElementById('lead-form');
       form.querySelector('[name="assessment"]').value = assessmentText;
+
+      form.querySelector('.lead-skip').addEventListener('click', function () {
+        wrapper.remove();
+      });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -169,6 +177,7 @@ const lang = 'fr' as const;
             feedback.className = 'lead-feedback success';
             btn.disabled = true;
             btn.textContent = originalText;
+            form.querySelector('.lead-skip').remove();
           } else {
             throw new Error('error');
           }
@@ -237,10 +246,7 @@ const lang = 'fr' as const;
               if (parsed.done) {
                 messages.push({ role: 'assistant', content: fullText });
 
-                var lower = fullText.toLowerCase();
-                if (lower.includes('discovery call') || lower.includes('appel d\u00e9couverte') ||
-                    lower.includes('next step') || lower.includes('prochaine \u00e9tape') ||
-                    messages.length >= MAX_MESSAGES - 1) {
+                if (parsed.assessment_complete || messages.length >= MAX_MESSAGES - 1) {
                   conversationDone = true;
                   setInputEnabled(false);
                   showLeadForm(fullText);

@@ -130,6 +130,7 @@ export const ui = {
     'assessment.lead.success': 'Sent! Check your inbox shortly.',
     'assessment.lead.error': 'Something went wrong. Please email us at contact@mi8.be.',
     'assessment.lead.consent': 'I agree to share this assessment and my contact details with mi8.',
+    'assessment.lead.skip': 'No thanks',
     'assessment.disclaimer': 'Sovereign infrastructure \u00b7 Open-source models \u00b7 No conversation data stored \u00b7',
     'assessment.disclaimerLink': 'Privacy policy',
 
@@ -266,6 +267,7 @@ export const ui = {
     'assessment.lead.success': 'Envoy\u00e9\u00a0! Consultez votre bo\u00eete de r\u00e9ception.',
     'assessment.lead.error': 'Une erreur est survenue. Contactez-nous \u00e0 contact@mi8.be.',
     'assessment.lead.consent': 'J\u2019accepte de partager cette \u00e9valuation et mes coordonn\u00e9es avec mi8.',
+    'assessment.lead.skip': 'Non merci',
     'assessment.disclaimer': 'Infrastructure souveraine \u00b7 Mod\u00e8les open source \u00b7 Aucune conversation stock\u00e9e \u00b7',
     'assessment.disclaimerLink': 'Politique de confidentialit\u00e9',
 
