@@ -10,18 +10,47 @@ interface Props {
   pubDate: Date;
   lang?: Lang;
   slug?: string;
+  author?: string;
 }
 
-const { title, description, pubDate, lang = 'en', slug = '' } = Astro.props;
+const { title, description, pubDate, lang = 'en', slug = '', author } = Astro.props;
 const formattedDate = pubDate.toLocaleDateString(dateLocale(lang), {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
 const blogPath = slug ? `/blog/${slug}` : '/blog';
+
+const site = Astro.site!;
+const canonicalURL = new URL(Astro.url.pathname, site).href;
+const articleAuthor = author || 'mi8 SRL';
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": pubDate.toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": articleAuthor,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "mi8 SRL",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mi8.be/logo_dark.png",
+    },
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL,
+  },
+};
 ---
 
-<Layout title={`${title} — mi8`} description={description} lang={lang} type="article">
+<Layout title={`${title} — mi8`} description={description} lang={lang} type="article" pubDate={pubDate} author={articleAuthor}>
   <Nav lang={lang} path={blogPath} />
 
   <article class="blog-post">
@@ -36,6 +65,8 @@ const blogPath = slug ? `/blog/${slug}` : '/blog';
       </div>
     </div>
   </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
 
   <footer class="footer">
     <div class="container">

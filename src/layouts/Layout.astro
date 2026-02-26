@@ -9,9 +9,32 @@ interface Props {
   lang?: Lang;
   image?: string;
   type?: string;
+  pubDate?: Date;
+  author?: string;
 }
 
-const { title, lang = 'en', description = t(lang, 'meta.description'), image, type } = Astro.props;
+const {
+  title,
+  lang = 'en',
+  description = t(lang, 'meta.description'),
+  image,
+  type,
+  pubDate,
+  author,
+} = Astro.props;
+
+const site = Astro.site!;
+const canonicalURL = new URL(Astro.url.pathname, site).href;
+
+// Compute hreflang alternate URLs
+const pathname = Astro.url.pathname;
+const isFr = pathname.startsWith('/fr/') || pathname === '/fr';
+const basePath = isFr ? pathname.replace(/^\/fr/, '') || '/' : pathname;
+const enURL = new URL(basePath, site).href;
+const frURL = new URL(`/fr${basePath === '/' ? '' : basePath}`, site).href;
+
+// OG image — always present, fallback to default
+const ogImage = image || new URL('/og-default.png', site).href;
 ---
 
 <!doctype html>
@@ -21,16 +44,39 @@ const { title, lang = 'en', description = t(lang, 'meta.description'), image, ty
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="mi8 SRL" />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="fr" href={frURL} />
+    <link rel="alternate" hreflang="x-default" href={enURL} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type || 'website'} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content={lang === 'fr' ? 'fr_BE' : 'en_US'} />
-    {image && <meta property="og:image" content={image} />}
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="mi8" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {type === 'article' && pubDate && (
+      <meta property="article:published_time" content={pubDate.toISOString()} />
+    )}
+    {type === 'article' && author && (
+      <meta property="article:author" content={author} />
+    )}
+
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
+
     <script is:inline>
       (function () {
         const theme = localStorage.getItem('theme') ||
@@ -38,6 +84,27 @@ const { title, lang = 'en', description = t(lang, 'meta.description'), image, ty
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "mi8 SRL",
+      "url": "https://www.mi8.be",
+      "logo": "https://www.mi8.be/logo_dark.png",
+      "description": t('en', 'meta.description'),
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Chaussée de Namur 31/5",
+        "addressLocality": "Walhain",
+        "postalCode": "1457",
+        "addressCountry": "BE"
+      },
+      "vatID": "BE 0535.711.105",
+      "sameAs": [
+        "https://www.linkedin.com/company/mi8/",
+        "https://github.com/mi8"
+      ]
+    })} />
   </head>
   <body>
     <slot />
