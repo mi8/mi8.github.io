@@ -1,7 +1,7 @@
 ---
 title: "What Are AI Agents? A No-Hype Primer"
 description: "Cut through the buzzwords. Here's what AI agents actually are, how they work, and when they make sense for your business."
-pubDate: 2026-02-18
+pubDate: 2025-12-01
 ---
 
 The term "AI agent" gets thrown around a lot. Vendors slap it on anything with a chat interface. Let's cut through that and talk about what agents actually are from an engineering perspective.

@@ -1,7 +1,7 @@
 ---
 title: "Anatomie d'un agent IA en production"
 description: "Que faut-il réellement pour faire passer un agent IA du prototype à la production ? Nous décortiquons les composants essentiels."
-pubDate: 2026-01-25
+pubDate: 2025-12-22
 ---
 
 Faire fonctionner un agent de démonstration prend un après-midi. Faire fonctionner un agent de production de manière fiable demande une rigueur d'ingénierie. Voici à quoi ressemble réellement un agent de qualité production sous le capot.

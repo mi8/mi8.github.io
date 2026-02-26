@@ -1,7 +1,7 @@
 ---
 title: "Build vs. Buy vs. Managed: Choosing Your AI Agent Strategy"
 description: "Should you build agents in-house, buy a platform, or work with a managed provider? We break down the trade-offs."
-pubDate: 2026-02-05
+pubDate: 2026-01-12
 ---
 
 Every enterprise considering AI agents faces the same strategic question: how do we get from "this sounds promising" to "this is running in production"? There are three paths. Each has real trade-offs, and the right choice depends on where you are, not where you wish you were.

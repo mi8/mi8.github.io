@@ -1,7 +1,7 @@
 ---
 title: "AI Agents vs. RPA: What's Actually Different"
 description: "RPA automates clicks. AI agents automate decisions. Here's when each makes sense and why agents are winning."
-pubDate: 2025-11-18
+pubDate: 2025-12-15
 ---
 
 RPA had a great decade. Enterprises spent billions on bots that click through UIs, copy data between systems, and execute rule-based workflows at scale. It solved real problems. But anyone who's maintained an RPA deployment knows the pain: a single UI change breaks a bot, and suddenly your "automated" process needs manual intervention.

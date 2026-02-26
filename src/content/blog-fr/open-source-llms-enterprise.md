@@ -1,7 +1,7 @@
 ---
 title: "Les LLM open source sont prets pour l'entreprise. Voici ce qui a change."
 description: "Llama, Mistral, Qwen -- les modeles a poids ouverts rivalisent desormais avec les API proprietaires. Nous expliquons ce que cela signifie pour les entreprises qui developpent des agents IA."
-pubDate: 2026-02-12
+pubDate: 2026-01-19
 ---
 
 Il y a deux ans, l'ecart entre les modeles a poids ouverts et les API proprietaires etait significatif. Si vous vouliez un raisonnement de pointe, un suivi d'instructions et une utilisation d'outils de premier ordre, vous appeliez GPT-4 et payiez la taxe au token. Des alternatives ouvertes existaient, mais elles imposaient des compromis que la plupart des entreprises ne pouvaient pas accepter.

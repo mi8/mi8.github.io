@@ -1,7 +1,7 @@
 ---
 title: "Sovereign AI: Why Enterprises Are Taking Back Control of Their AI Stack"
 description: "Sending every prompt to a third-party API is a strategic risk. Here's what sovereign AI means in practice and why it matters."
-pubDate: 2026-02-20
+pubDate: 2026-01-26
 ---
 
 Every time an enterprise sends a prompt to a third-party API, it makes a choice: convenience now, dependency later. For a growing number of companies, that trade-off no longer makes sense.

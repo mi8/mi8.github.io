@@ -1,7 +1,7 @@
 ---
 title: "Garde-fous pour les agents IA : comment securiser les systemes autonomes"
 description: "Les agents autonomes ont besoin de limites. Voici comment nous concevons des garde-fous qui maintiennent la securite des agents sans les rendre inutiles."
-pubDate: 2026-01-15
+pubDate: 2025-12-29
 ---
 
 Un agent IA sans garde-fous est un risque. Un agent avec trop de garde-fous est inutile. Le defi d'ingenierie consiste a trouver les bonnes contraintes -- des limites qui maintiennent la securite du systeme tout en preservant l'autonomie qui fait la valeur des agents.

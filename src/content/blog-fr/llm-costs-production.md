@@ -1,7 +1,7 @@
 ---
 title: "Maîtriser les coûts LLM dans les systèmes d'agents en production"
 description: "Les coûts des API LLM peuvent s'envoler rapidement. Voici les stratégies concrètes que nous utilisons pour maintenir la viabilité économique des systèmes d'agents."
-pubDate: 2025-10-15
+pubDate: 2026-02-09
 ---
 
 Un prototype d'agent bien conçu peut coûter 0,02 $ par tâche. Passez à 10 000 tâches par jour, ajoutez les nouvelles tentatives, le raisonnement en plusieurs étapes et quelques boucles d'appels d'outils, et vous vous retrouvez soudain face à une facture API mensuelle à cinq chiffres. Les coûts LLM en production sont maîtrisables, mais uniquement si vous les intégrez dans votre conception dès le départ.

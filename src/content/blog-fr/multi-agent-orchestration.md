@@ -1,7 +1,7 @@
 ---
 title: "Orchestration multi-agents : quand un seul agent ne suffit pas"
 description: "Les workflows complexes en entreprise necessitent souvent plusieurs agents specialises travaillant ensemble. Voici comment nous abordons l'orchestration."
-pubDate: 2026-01-08
+pubDate: 2026-02-16
 ---
 
 Un seul agent peut accomplir beaucoup. Mais les workflows en entreprise impliquent souvent plusieurs domaines, outils et contextes de prise de decision. C'est la que les systemes multi-agents entrent en jeu.

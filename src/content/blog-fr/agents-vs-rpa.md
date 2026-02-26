@@ -1,7 +1,7 @@
 ---
 title: "Agents IA vs. RPA : ce qui est reellement different"
 description: "Le RPA automatise les clics. Les agents IA automatisent les decisions. Voici quand chaque approche a du sens et pourquoi les agents prennent l'avantage."
-pubDate: 2025-11-18
+pubDate: 2025-12-15
 ---
 
 Le RPA a connu une excellente decennie. Les entreprises ont investi des milliards dans des bots qui cliquent dans des interfaces, copient des donnees entre systemes et executent des workflows bases sur des regles a grande echelle. Il a resolu de vrais problemes. Mais quiconque a maintenu un deploiement RPA connait la difficulte : un simple changement d'interface casse un bot, et soudainement votre processus "automatise" necessite une intervention manuelle.

@@ -1,7 +1,7 @@
 ---
 title: "IA souveraine : pourquoi les entreprises reprennent le controle de leur stack IA"
 description: "Envoyer chaque prompt a une API tierce est un risque strategique. Voici ce que signifie concretement l'IA souveraine et pourquoi c'est important."
-pubDate: 2026-02-20
+pubDate: 2026-01-26
 ---
 
 Chaque fois qu'une entreprise envoie un prompt a une API tierce, elle fait un choix : la commodite maintenant, la dependance plus tard. Pour un nombre croissant d'entreprises, ce compromis n'a plus de sens.

@@ -1,7 +1,7 @@
 ---
 title: "L'humain dans la boucle : le secret des agents qui fonctionnent vraiment"
 description: "Les meilleurs agents IA ne remplacent pas les humains -- ils savent quand demander de l'aide. Voici comment nous concevons les schémas d'escalade."
-pubDate: 2025-11-01
+pubDate: 2026-01-05
 ---
 
 L'argumentaire est tentant : déployer un agent IA, retirer les humains de la boucle et regarder les coûts baisser. En pratique, les agents entièrement autonomes en environnement entreprise sont un risque. Ils hallucinent. Ils rencontrent des cas limites que les concepteurs n'avaient pas anticipés. Ils commettent des erreurs en toute confiance sur des décisions à fort enjeu.

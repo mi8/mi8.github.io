@@ -1,7 +1,7 @@
 ---
 title: "Data Privacy and AI Agents: A Practical Compliance Guide"
 description: "AI agents process personal data at scale. Here's how to design agent systems that are privacy-compliant from day one."
-pubDate: 2026-01-20
+pubDate: 2026-02-23
 ---
 
 AI agents don't just generate text. They read customer records, process documents, query databases, and take actions across business systems. That means they process personal data -- often at scale, often automatically, and often in ways that traditional data protection frameworks weren't designed for.

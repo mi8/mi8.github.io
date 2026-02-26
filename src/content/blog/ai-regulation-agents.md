@@ -1,7 +1,8 @@
 ---
 title: "AI Regulation Is Here: What It Means for Enterprise Agent Systems"
 description: "AI regulation is tightening worldwide. We break down what it means for companies deploying AI agent systems and how to prepare."
-pubDate: 2026-01-02
+pubDate: 2026-03-02
+draft: true
 ---
 
 AI regulation is no longer a future concern -- it's here. The EU AI Act is the most comprehensive example, now in force with penalties up to 35 million euro or 7% of global turnover. But it's part of a global trend: Canada's AIDA, China's AI regulations, sector-specific rules from US federal agencies, and a growing patchwork of state-level legislation in the US are all moving in the same direction. For enterprises deploying AI agent systems, the question is not whether regulation will affect you, but which regulations apply and how to prepare.

@@ -1,7 +1,7 @@
 ---
 title: "Pourquoi les agents IA sont importants pour les logiciels d'entreprise"
 description: "Les agents IA sont bien plus que des chatbots. Ils representent un changement fondamental dans la facon dont les logiciels d'entreprise sont concus et operes."
-pubDate: 2026-02-10
+pubDate: 2025-12-08
 ---
 
 Le paysage des logiciels d'entreprise est en pleine mutation. Pendant des decennies, nous avons construit des outils pour aider les humains a travailler plus vite. Les agents IA inversent ce modele : ils effectuent le travail, et les humains assurent la supervision.

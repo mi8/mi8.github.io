@@ -1,7 +1,7 @@
 ---
 title: "Anatomy of a Production AI Agent"
 description: "What does it actually take to move an AI agent from prototype to production? We break down the key components."
-pubDate: 2026-01-25
+pubDate: 2025-12-22
 ---
 
 Getting a demo agent working takes an afternoon. Getting a production agent running reliably takes engineering discipline. Here's what a production-grade agent actually looks like under the hood.

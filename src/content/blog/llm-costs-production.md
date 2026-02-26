@@ -1,7 +1,7 @@
 ---
 title: "Managing LLM Costs in Production Agent Systems"
 description: "LLM API costs can spiral fast. Here are the practical strategies we use to keep agent systems economically viable."
-pubDate: 2025-10-15
+pubDate: 2026-02-09
 ---
 
 A well-designed agent prototype might cost $0.02 per task. Scale it to 10,000 tasks per day, add retries, multi-step reasoning, and a few tool-call loops, and suddenly you're looking at a five-figure monthly API bill. LLM costs in production are manageable, but only if you design for them from the start.

@@ -1,7 +1,7 @@
 ---
 title: "Why AI Agents Matter for Enterprise Software"
 description: "AI agents are more than chatbots. They represent a fundamental shift in how enterprise software gets built and operated."
-pubDate: 2026-02-10
+pubDate: 2025-12-08
 ---
 
 The enterprise software landscape is shifting. For decades, we've built tools that help humans do work faster. AI agents flip that model: they do the work, and humans provide oversight.

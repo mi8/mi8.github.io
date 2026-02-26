@@ -1,7 +1,7 @@
 ---
 title: "Que sont les agents IA ? Un guide sans battage mediatique"
 description: "Au-dela des mots a la mode. Voici ce que sont reellement les agents IA, comment ils fonctionnent et quand ils ont du sens pour votre entreprise."
-pubDate: 2026-02-18
+pubDate: 2025-12-01
 ---
 
 Le terme "agent IA" est utilise a toutes les sauces. Les editeurs l'apposent sur tout ce qui dispose d'une interface de chat. Depassons cela et parlons de ce que sont reellement les agents d'un point de vue technique.

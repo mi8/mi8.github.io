@@ -1,7 +1,8 @@
 ---
 title: "Why Most Enterprise AI Projects Fail (And How Agents Are Different)"
 description: "80% of AI projects never make it to production. Here's why — and what the agent model changes about the equation."
-pubDate: 2025-12-05
+pubDate: 2026-03-09
+draft: true
 ---
 
 The Gartner and Rand Corporation numbers get cited so often they've lost their shock value: somewhere between 60% and 80% of enterprise AI projects fail to reach production. Having built and deployed systems on both sides of that statistic, we've seen the failure modes up close. Most of them have nothing to do with the AI itself.

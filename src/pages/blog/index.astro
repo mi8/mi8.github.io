@@ -4,6 +4,7 @@ import Nav from '../../components/Nav.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 

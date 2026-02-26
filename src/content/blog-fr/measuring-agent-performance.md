@@ -1,7 +1,7 @@
 ---
 title: "Comment mesurer la performance des agents IA"
 description: "La précision ne suffit pas. Voici le cadre que nous utilisons pour évaluer si les agents IA créent réellement de la valeur."
-pubDate: 2025-12-20
+pubDate: 2026-02-02
 ---
 
 Vous avez déployé un agent IA. Il semble fonctionner. Mais est-il réellement performant ? "Il donne généralement la bonne réponse" n'est pas un cadre d'évaluation. Si vous souhaitez améliorer la performance de vos agents de manière systématique, vous devez la mesurer de manière systématique.

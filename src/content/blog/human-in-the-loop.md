@@ -1,7 +1,7 @@
 ---
 title: "Human-in-the-Loop: The Secret to Agents That Actually Work"
 description: "The best AI agents don't replace humans — they know when to ask for help. Here's how we design escalation patterns."
-pubDate: 2025-11-01
+pubDate: 2026-01-05
 ---
 
 The pitch is tempting: deploy an AI agent, remove humans from the loop, and watch costs drop. In practice, fully autonomous agents in enterprise settings are a liability. They hallucinate. They encounter edge cases the designers didn't anticipate. They make confident mistakes on high-stakes decisions.

@@ -1,7 +1,7 @@
 ---
 title: "Développer, acheter ou externaliser : choisir votre stratégie d'agents IA"
 description: "Faut-il développer vos agents en interne, acheter une plateforme ou faire appel à un prestataire managé ? Nous analysons les compromis."
-pubDate: 2026-02-05
+pubDate: 2026-01-12
 ---
 
 Chaque entreprise qui envisage les agents IA fait face à la même question stratégique : comment passer de "ça semble prometteur" à "c'est en production" ? Il existe trois voies. Chacune comporte de vrais compromis, et le bon choix dépend de votre situation actuelle, pas de celle que vous aimeriez avoir.

@@ -1,7 +1,7 @@
 ---
 title: "Multi-Agent Orchestration: When One Agent Isn't Enough"
 description: "Complex enterprise workflows often need multiple specialized agents working together. Here's how we approach orchestration."
-pubDate: 2026-01-08
+pubDate: 2026-02-16
 ---
 
 A single agent can handle a lot. But enterprise workflows often involve multiple domains, tools, and decision-making contexts. That's where multi-agent systems come in.

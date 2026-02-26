@@ -1,7 +1,8 @@
 ---
 title: "Pourquoi la plupart des projets IA en entreprise echouent (et en quoi les agents changent la donne)"
 description: "80 % des projets IA n'atteignent jamais la production. Voici pourquoi -- et ce que le modele agent change dans l'equation."
-pubDate: 2025-12-05
+pubDate: 2026-03-09
+draft: true
 ---
 
 Les chiffres de Gartner et de la Rand Corporation sont cites si souvent qu'ils ont perdu leur pouvoir de choc : entre 60 % et 80 % des projets IA en entreprise n'atteignent jamais la production. Ayant concu et deploye des systemes des deux cotes de cette statistique, nous avons observe les modes d'echec de pres. La plupart n'ont rien a voir avec l'IA elle-meme.

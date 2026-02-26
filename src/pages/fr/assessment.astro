@@ -246,7 +246,7 @@ const lang = 'fr' as const;
               if (parsed.done) {
                 messages.push({ role: 'assistant', content: fullText });
 
-                if (parsed.assessment_complete || messages.length >= MAX_MESSAGES - 1) {
+                if (parsed.assessment_complete) {
                   conversationDone = true;
                   setInputEnabled(false);
                   showLeadForm(fullText);

@@ -1,7 +1,7 @@
 ---
 title: "Open-Source LLMs Are Enterprise-Ready. Here's What Changed."
 description: "Llama, Mistral, Qwen -- open-weight models now rival closed APIs. We explain what this means for enterprises building AI agents."
-pubDate: 2026-02-12
+pubDate: 2026-01-19
 ---
 
 Two years ago, the gap between open-weight models and closed APIs was significant. If you wanted top-tier reasoning, instruction following, and tool use, you called GPT-4 and paid the token tax. Open alternatives existed, but they required compromises that most enterprises couldn't accept.

@@ -1,7 +1,7 @@
 ---
 title: "Protection des donnees et agents IA : un guide pratique de conformite"
 description: "Les agents IA traitent des donnees personnelles a grande echelle. Voici comment concevoir des systemes d'agents conformes des la conception."
-pubDate: 2026-01-20
+pubDate: 2026-02-23
 ---
 
 Les agents IA ne se contentent pas de generer du texte. Ils consultent des dossiers clients, traitent des documents, interrogent des bases de donnees et executent des actions dans les systemes metier. Cela signifie qu'ils traitent des donnees personnelles -- souvent a grande echelle, souvent de maniere automatique, et souvent d'une facon pour laquelle les cadres traditionnels de protection des donnees n'ont pas ete concus.

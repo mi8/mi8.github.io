@@ -1,7 +1,8 @@
 ---
 title: "La reglementation de l'IA est la : ce que cela signifie pour les systemes d'agents en entreprise"
 description: "La reglementation de l'IA se durcit dans le monde entier. Nous analysons ce que cela signifie pour les entreprises qui deploient des systemes d'agents IA et comment s'y preparer."
-pubDate: 2026-01-02
+pubDate: 2026-03-02
+draft: true
 ---
 
 La reglementation de l'IA n'est plus une preoccupation future -- elle est la. Le reglement europeen sur l'IA (AI Act) en est l'exemple le plus complet, desormais en vigueur avec des sanctions pouvant atteindre 35 millions d'euros ou 7 % du chiffre d'affaires mondial. Mais il s'inscrit dans une tendance mondiale : la loi canadienne AIDA, les reglementations chinoises sur l'IA, les regles sectorielles des agences federales americaines et un patchwork croissant de legislations au niveau des Etats americains vont tous dans la meme direction. Pour les entreprises qui deploient des systemes d'agents IA, la question n'est pas de savoir si la reglementation vous affectera, mais quelles reglementations s'appliquent et comment vous y preparer.

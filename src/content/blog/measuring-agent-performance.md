@@ -1,7 +1,7 @@
 ---
 title: "How to Measure AI Agent Performance"
 description: "Accuracy isn't enough. Here's the framework we use to evaluate whether AI agents are actually delivering value."
-pubDate: 2025-12-20
+pubDate: 2026-02-02
 ---
 
 You've deployed an AI agent. It seems to be working. But is it actually good? "It mostly gets the right answer" is not an evaluation framework. If you want to improve agent performance systematically, you need to measure it systematically.

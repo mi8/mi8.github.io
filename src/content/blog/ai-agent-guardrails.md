@@ -1,7 +1,7 @@
 ---
 title: "Guardrails for AI Agents: How to Keep Autonomous Systems Safe"
 description: "Autonomous agents need boundaries. Here's how we design guardrails that keep agents safe without making them useless."
-pubDate: 2026-01-15
+pubDate: 2025-12-29
 ---
 
 An AI agent without guardrails is a liability. An agent with too many guardrails is useless. The engineering challenge is finding the right constraints -- boundaries that keep the system safe while preserving the autonomy that makes agents valuable in the first place.
