@@ -49,6 +49,8 @@ const lang = 'fr' as const;
     LEAD_ERROR: t(lang, 'assessment.lead.error'),
     LEAD_CONSENT: t(lang, 'assessment.lead.consent'),
     LEAD_SKIP: t(lang, 'assessment.lead.skip'),
+    FEEDBACK_LABEL: t(lang, 'assessment.feedback'),
+    FEEDBACK_THANKS: t(lang, 'assessment.feedback.thanks'),
   }}>
     // ── Configuration ──
     var AGENT_API = 'http://100.73.44.17:3000/api/chat';
@@ -58,6 +60,7 @@ const lang = 'fr' as const;
     var messages = [];
     var isStreaming = false;
     var conversationDone = false;
+    var assessmentStartTime = null;
 
     // ── DOM ──
     var chatMessages = document.getElementById('chat-messages');
@@ -156,6 +159,7 @@ const lang = 'fr' as const;
       form.querySelector('.lead-skip').addEventListener('click', function () {
         if (typeof umami !== 'undefined') umami.track('report-skipped');
         wrapper.remove();
+        showFeedback();
       });
 
       form.addEventListener('submit', function (e) {
@@ -180,6 +184,7 @@ const lang = 'fr' as const;
             btn.disabled = true;
             btn.textContent = originalText;
             form.querySelector('.lead-skip').remove();
+            showFeedback();
           } else {
             throw new Error('error');
           }
@@ -188,6 +193,34 @@ const lang = 'fr' as const;
           feedback.className = 'lead-feedback error';
           btn.disabled = false;
           btn.textContent = originalText;
+        });
+      });
+    }
+
+    // ── Feedback ──
+    function showFeedback() {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'chat-lead-form';
+      wrapper.innerHTML =
+        '<div class="lead-card feedback-card">' +
+          '<p>' + FEEDBACK_LABEL + '</p>' +
+          '<div class="feedback-stars" role="group" aria-label="Rating">' +
+            '<button data-rating="1" aria-label="1 star">1</button>' +
+            '<button data-rating="2" aria-label="2 stars">2</button>' +
+            '<button data-rating="3" aria-label="3 stars">3</button>' +
+            '<button data-rating="4" aria-label="4 stars">4</button>' +
+            '<button data-rating="5" aria-label="5 stars">5</button>' +
+          '</div>' +
+        '</div>';
+
+      chatMessages.appendChild(wrapper);
+      scrollToBottom();
+
+      wrapper.querySelectorAll('[data-rating]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var rating = Number(btn.getAttribute('data-rating'));
+          if (typeof umami !== 'undefined') umami.track('assessment-rating', { rating: rating });
+          wrapper.querySelector('.feedback-stars').innerHTML = '<p class="lead-feedback success">' + FEEDBACK_THANKS + '</p>';
         });
       });
     }
@@ -202,7 +235,10 @@ const lang = 'fr' as const;
       }
 
       messages.push({ role: 'user', content: text });
-      if (messages.length === 1 && typeof umami !== 'undefined') umami.track('assessment-started');
+      if (messages.length === 1) {
+        assessmentStartTime = Date.now();
+        if (typeof umami !== 'undefined') umami.track('assessment-started');
+      }
       addMessage('user', text);
       chatInput.value = '';
       chatInput.style.height = 'auto';
@@ -252,7 +288,10 @@ const lang = 'fr' as const;
                 if (parsed.assessment_complete) {
                   conversationDone = true;
                   setInputEnabled(false);
-                  if (typeof umami !== 'undefined') umami.track('assessment-completed');
+                  if (typeof umami !== 'undefined') {
+                    var durationSec = assessmentStartTime ? Math.round((Date.now() - assessmentStartTime) / 1000) : 0;
+                    umami.track('assessment-completed', { turns: messages.length, duration_seconds: durationSec });
+                  }
                   showLeadForm(fullText);
                 }
               }

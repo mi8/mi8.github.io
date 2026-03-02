@@ -1504,6 +1504,36 @@ section {
   color: #f44336;
 }
 
+.feedback-card p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.feedback-stars button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.feedback-stars button:hover {
+  background: rgba(var(--accent-rgb), 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .chat-disclaimer a {
   color: var(--text-tertiary);
   text-decoration: underline;
