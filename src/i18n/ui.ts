@@ -137,7 +137,7 @@ export const ui = {
     // Privacy
     'privacy.title': 'Privacy Policy \u2014 mi8',
     'privacy.heading': 'Privacy Policy',
-    'privacy.lastUpdated': 'Last updated: February 2026',
+    'privacy.lastUpdated': 'Last updated: March 2026',
     'privacy.description': 'How mi8 handles your data: AI assessment privacy, contact form processing, and your GDPR rights.',
 
     // Meta
@@ -275,7 +275,7 @@ export const ui = {
     // Privacy
     'privacy.title': 'Politique de confidentialit\u00e9 \u2014 mi8',
     'privacy.heading': 'Politique de confidentialit\u00e9',
-    'privacy.lastUpdated': 'Derni\u00e8re mise \u00e0 jour\u00a0: f\u00e9vrier 2026',
+    'privacy.lastUpdated': 'Derni\u00e8re mise \u00e0 jour\u00a0: mars 2026',
     'privacy.description': 'Comment mi8 traite vos donn\u00e9es\u00a0: confidentialit\u00e9 de l\u2019\u00e9valuation IA, traitement du formulaire de contact et vos droits RGPD.',
 
     // Meta

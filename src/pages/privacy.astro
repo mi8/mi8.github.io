@@ -24,7 +24,7 @@ const lang = 'en' as const;
         <p>Our assessment agent runs entirely on sovereign infrastructure located in the EU, powered by open-source models. Here is how data is handled during the assessment:</p>
         <ul>
           <li><strong>No conversation storage.</strong> Your chat messages are processed in real time to generate responses. They are not logged, stored, or used for training. When you close the page, the conversation is gone.</li>
-          <li><strong>No personal data collected.</strong> We do not ask for your name, email, or any identifying information during the chat. No cookies or tracking pixels are used on the assessment page.</li>
+          <li><strong>No personal data collected.</strong> We do not ask for your name, email, or any identifying information during the chat.</li>
           <li><strong>IP addresses.</strong> Your IP address is processed temporarily in server memory for rate limiting (preventing abuse). It is not logged to disk and is discarded when the server restarts.</li>
           <li><strong>Sharing is your choice.</strong> At the end of the assessment, you may choose to email the results to mi8 or copy them to your clipboard. This action is entirely optional and initiated by you&mdash;we do not automatically receive any conversation data.</li>
         </ul>
@@ -32,8 +32,17 @@ const lang = 'en' as const;
         <h2>Contact form</h2>
         <p>The contact form on our homepage is processed by <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> (based in the United States). When you submit the contact form, your name, email, company, and message are transmitted to Formspree and forwarded to us via email. Formspree acts as a data processor under their <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a>. We use this data solely to respond to your inquiry.</p>
 
+        <h2>Web analytics</h2>
+        <p>We use <a href="https://umami.is" target="_blank" rel="noopener noreferrer">Umami Cloud</a> for web analytics. Umami is a privacy-focused analytics tool that:</p>
+        <ul>
+          <li><strong>Does not use cookies.</strong> No consent banner is needed.</li>
+          <li><strong>Collects no personal data.</strong> No IP addresses, device fingerprints, or personally identifiable information is stored.</li>
+          <li><strong>Data stays in the EU.</strong> Analytics data is stored on Umami Cloud servers in the European Union.</li>
+          <li><strong>Tracks only aggregate usage.</strong> We see page views, referral sources, and general device/country statistics to understand how visitors use the site. We cannot identify individual visitors.</li>
+        </ul>
+
         <h2>Website hosting</h2>
-        <p>This website is hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. GitHub may collect technical logs (IP addresses, browser type) as described in their <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">privacy statement</a>. We use Google Fonts for typography, which involves requests to Google's servers when loading the page.</p>
+        <p>This website is hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. GitHub may collect technical logs (IP addresses, browser type) as described in their <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">privacy statement</a>. Fonts are self-hosted and do not involve third-party requests.</p>
 
         <h2>Your rights</h2>
         <p>Under the GDPR, you have the right to access, rectify, erase, restrict, or port your personal data, and to object to its processing. Since we collect minimal data, most of these rights are satisfied by design. For any request, contact us at <a href="mailto:contact@mi8.be">contact@mi8.be</a>.</p>
@@ -55,6 +64,7 @@ const lang = 'en' as const;
           <a href="mailto:contact@mi8.be">contact@mi8.be</a>
           <a href="https://www.linkedin.com/company/mi8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/mi8" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/privacy">Privacy</a>
         </div>
       </div>
       <div class="footer-bottom">
