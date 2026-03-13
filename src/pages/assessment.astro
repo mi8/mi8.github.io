@@ -29,6 +29,7 @@ const lang = 'en' as const;
           rows="1"
           placeholder={t(lang, 'assessment.inputPlaceholder')}
           autocomplete="off"
+          maxlength="2000"
         ></textarea>
         <button class="chat-send-btn" id="chat-send">{t(lang, 'assessment.send')}</button>
       </div>
@@ -51,10 +52,12 @@ const lang = 'en' as const;
     LEAD_SKIP: t(lang, 'assessment.lead.skip'),
   }}>
     // ── Configuration ──
-    var AGENT_API = 'http://100.73.44.17:3000/api/chat';
+    var AGENT_API = 'http://100.73.44.17:3030/api/chat';
     var MAX_MESSAGES = 15;
+    var MAX_INPUT_LENGTH = 2000;
 
     // ── State ──
+    var sessionId = crypto.randomUUID();
     var messages = [];
     var isStreaming = false;
     var conversationDone = false;
@@ -202,6 +205,7 @@ const lang = 'en' as const;
         return;
       }
 
+      text = text.slice(0, MAX_INPUT_LENGTH);
       messages.push({ role: 'user', content: text });
       if (messages.length === 1) {
         assessmentStartTime = Date.now();
@@ -217,7 +221,7 @@ const lang = 'en' as const;
       try {
         var res = await fetch(AGENT_API, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'X-Session-ID': sessionId },
           body: JSON.stringify({ messages: messages, lang: LANG })
         });
 
