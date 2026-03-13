@@ -463,10 +463,21 @@ section {
   background: var(--accent-alt);
 }
 
+/* Hero two-column layout */
+.hero-layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 750px;
+  max-width: 600px;
+  flex-shrink: 0;
 }
 
 .hero-content h1 {
@@ -490,6 +501,76 @@ section {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Hero entrance animations */
+.hero-content .section-label {
+  animation: heroFadeUp 600ms ease-out both;
+}
+
+.hero-content h1 {
+  animation: heroFadeUp 600ms ease-out 100ms both;
+}
+
+.hero-content > p {
+  animation: heroFadeUp 600ms ease-out 200ms both;
+}
+
+.hero-content .hero-actions {
+  animation: heroFadeUp 600ms ease-out 300ms both;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accent text shimmer on hover */
+.hero-content h1 .accent {
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--accent) 40%,
+    rgba(var(--accent-rgb), 0.6) 50%,
+    var(--accent) 60%,
+    var(--accent) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 400ms ease;
+}
+
+.hero-content h1:hover .accent {
+  background-position: -100% 0;
+}
+
+/* Hero bottom edge — glowing separator line */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content .section-label,
+  .hero-content h1,
+  .hero-content > p,
+  .hero-content .hero-actions {
+    animation: none;
+  }
 }
 
 /* --- Cards Grid --- */
@@ -532,6 +613,32 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* Staggered card entrance */
+.cards-grid .card {
+  animation: cardSlideUp 500ms ease-out both;
+}
+
+.cards-grid .card:nth-child(1) { animation-delay: 0ms; }
+.cards-grid .card:nth-child(2) { animation-delay: 100ms; }
+.cards-grid .card:nth-child(3) { animation-delay: 200ms; }
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-grid .card {
+    animation: none;
+  }
 }
 
 .card-icon {
@@ -1123,6 +1230,14 @@ section {
 
   .footer-content {
     flex-direction: column;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-content h1 {

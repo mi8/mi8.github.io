@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import HeroNetwork from '../components/HeroNetwork.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -17,14 +18,17 @@ const posts = (await getCollection('blog'))
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
     <div class="container">
-      <div class="hero-content">
-        <p class="section-label">Managed AI Agents</p>
-        <h1>We run <span class="accent">AI agents</span> so you don't have to</h1>
-        <p>We build, deploy, and operate AI agents for your business&mdash;on sovereign infrastructure, powered by open-source models. Privacy-preserving by design. Your agents get smarter every month.</p>
-        <div class="hero-actions">
-          <a href="/assessment" class="btn btn-primary">Talk to our agent</a>
-          <a href="#use-cases" class="btn btn-outline">See use cases</a>
+      <div class="hero-layout">
+        <div class="hero-content">
+          <p class="section-label">Managed AI Agents</p>
+          <h1>We run <span class="accent">AI agents</span> so you don't have to</h1>
+          <p>We build, deploy, and operate AI agents for your business&mdash;on sovereign infrastructure, powered by open-source models. Privacy-preserving by design. Your agents get smarter every month.</p>
+          <div class="hero-actions">
+            <a href="/assessment" class="btn btn-primary">Talk to our agent</a>
+            <a href="#use-cases" class="btn btn-outline">See use cases</a>
+          </div>
         </div>
+        <HeroNetwork />
       </div>
     </div>
   </section>

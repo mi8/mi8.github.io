@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
+import HeroNetwork from '../../components/HeroNetwork.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../i18n/ui';
 
@@ -19,14 +20,17 @@ const posts = (await getCollection('blog-fr'))
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
     <div class="container">
-      <div class="hero-content">
-        <p class="section-label">{t(lang, 'hero.label')}</p>
-        <h1>{t(lang, 'hero.title.before')}<span class="accent">{t(lang, 'hero.title.accent')}</span>{t(lang, 'hero.title.after')}</h1>
-        <p>{t(lang, 'hero.description')}</p>
-        <div class="hero-actions">
-          <a href="/fr/assessment" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
-          <a href="#use-cases" class="btn btn-outline">{t(lang, 'hero.secondary')}</a>
+      <div class="hero-layout">
+        <div class="hero-content">
+          <p class="section-label">{t(lang, 'hero.label')}</p>
+          <h1>{t(lang, 'hero.title.before')}<span class="accent">{t(lang, 'hero.title.accent')}</span>{t(lang, 'hero.title.after')}</h1>
+          <p>{t(lang, 'hero.description')}</p>
+          <div class="hero-actions">
+            <a href="/fr/assessment" class="btn btn-primary">{t(lang, 'hero.cta')}</a>
+            <a href="#use-cases" class="btn btn-outline">{t(lang, 'hero.secondary')}</a>
+          </div>
         </div>
+        <HeroNetwork />
       </div>
     </div>
   </section>

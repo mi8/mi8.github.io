@@ -1,0 +1,315 @@
+---
+/**
+ * Abstract SVG network graphic for the hero section.
+ * Shows interconnected agent nodes with subtle CSS pulse animations.
+ * Uses currentColor and CSS variables for theme compatibility.
+ */
+---
+
+<div class="hero-network" aria-hidden="true">
+  <svg viewBox="0 0 480 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Gradient for connection lines -->
+      <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="var(--accent-alt)" stop-opacity="0.2" />
+      </linearGradient>
+      <linearGradient id="line-grad-rev" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.4" />
+        <stop offset="100%" stop-color="var(--accent-alt)" stop-opacity="0.15" />
+      </linearGradient>
+
+      <!-- Glow filter for active nodes -->
+      <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="6" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+
+      <!-- Subtle glow for secondary nodes -->
+      <filter id="node-glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+
+      <!-- Data flow particle -->
+      <circle id="data-dot" r="2.5" fill="var(--accent)" opacity="0.8" />
+    </defs>
+
+    <!-- === Connection lines === -->
+    <!-- Tier 1: Core hub connections -->
+    <line x1="240" y1="200" x2="140" y2="100" stroke="url(#line-grad)" stroke-width="1.5" class="conn" />
+    <line x1="240" y1="200" x2="360" y2="100" stroke="url(#line-grad)" stroke-width="1.5" class="conn" />
+    <line x1="240" y1="200" x2="120" y2="300" stroke="url(#line-grad)" stroke-width="1.5" class="conn" />
+    <line x1="240" y1="200" x2="370" y2="280" stroke="url(#line-grad)" stroke-width="1.5" class="conn" />
+    <line x1="240" y1="200" x2="240" y2="350" stroke="url(#line-grad)" stroke-width="1.5" class="conn" />
+
+    <!-- Tier 2: Outer connections -->
+    <line x1="140" y1="100" x2="60" y2="60" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="140" y1="100" x2="80" y2="180" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="360" y1="100" x2="430" y2="40" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="360" y1="100" x2="420" y2="170" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="120" y1="300" x2="50" y2="340" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="370" y1="280" x2="440" y2="330" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="240" y1="350" x2="170" y2="420" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+    <line x1="240" y1="350" x2="320" y2="430" stroke="url(#line-grad-rev)" stroke-width="1" class="conn conn-outer" />
+
+    <!-- Cross connections (mesh feel) -->
+    <line x1="140" y1="100" x2="360" y2="100" stroke="url(#line-grad)" stroke-width="0.8" class="conn conn-cross" stroke-dasharray="4 6" />
+    <line x1="120" y1="300" x2="370" y2="280" stroke="url(#line-grad)" stroke-width="0.8" class="conn conn-cross" stroke-dasharray="4 6" />
+    <line x1="120" y1="300" x2="240" y2="350" stroke="url(#line-grad-rev)" stroke-width="0.8" class="conn conn-cross" stroke-dasharray="4 6" />
+    <line x1="370" y1="280" x2="240" y2="350" stroke="url(#line-grad-rev)" stroke-width="0.8" class="conn conn-cross" stroke-dasharray="4 6" />
+
+    <!-- === Data flow particles === -->
+    <!-- Particles traveling along connections -->
+    <circle r="2" fill="var(--accent)" opacity="0">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
+        <mpath href="#flow-path-1" />
+      </animateMotion>
+      <animate attributeName="opacity" values="0;0.8;0.8;0" dur="3s" repeatCount="indefinite" begin="0s" />
+    </circle>
+    <circle r="2" fill="var(--accent)" opacity="0">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="1.5s">
+        <mpath href="#flow-path-2" />
+      </animateMotion>
+      <animate attributeName="opacity" values="0;0.6;0.6;0" dur="4s" repeatCount="indefinite" begin="1.5s" />
+    </circle>
+    <circle r="1.5" fill="var(--accent-alt)" opacity="0">
+      <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.8s">
+        <mpath href="#flow-path-3" />
+      </animateMotion>
+      <animate attributeName="opacity" values="0;0.7;0.7;0" dur="3.5s" repeatCount="indefinite" begin="0.8s" />
+    </circle>
+    <circle r="1.5" fill="var(--accent)" opacity="0">
+      <animateMotion dur="4.5s" repeatCount="indefinite" begin="2s">
+        <mpath href="#flow-path-4" />
+      </animateMotion>
+      <animate attributeName="opacity" values="0;0.5;0.5;0" dur="4.5s" repeatCount="indefinite" begin="2s" />
+    </circle>
+
+    <!-- Hidden paths for animateMotion -->
+    <path id="flow-path-1" d="M60,60 L140,100 L240,200 L370,280 L440,330" fill="none" />
+    <path id="flow-path-2" d="M430,40 L360,100 L240,200 L120,300 L50,340" fill="none" />
+    <path id="flow-path-3" d="M80,180 L140,100 L240,200 L240,350 L320,430" fill="none" />
+    <path id="flow-path-4" d="M420,170 L360,100 L140,100 L120,300 L170,420" fill="none" />
+
+    <!-- === Nodes === -->
+    <!-- Central hub (largest) -->
+    <g class="node node-hub" filter="url(#node-glow)">
+      <circle cx="240" cy="200" r="16" fill="var(--accent)" opacity="0.15" class="node-ring" />
+      <circle cx="240" cy="200" r="10" fill="var(--accent)" opacity="0.25" class="node-ring-inner" />
+      <circle cx="240" cy="200" r="5" fill="var(--accent)" />
+    </g>
+
+    <!-- Primary agent nodes -->
+    <g class="node node-primary" filter="url(#node-glow-soft)">
+      <circle cx="140" cy="100" r="12" fill="var(--accent)" opacity="0.1" class="node-ring" />
+      <circle cx="140" cy="100" r="7" fill="var(--accent)" opacity="0.2" class="node-ring-inner" />
+      <circle cx="140" cy="100" r="4" fill="var(--accent)" />
+    </g>
+    <g class="node node-primary" filter="url(#node-glow-soft)">
+      <circle cx="360" cy="100" r="12" fill="var(--accent)" opacity="0.1" class="node-ring" />
+      <circle cx="360" cy="100" r="7" fill="var(--accent)" opacity="0.2" class="node-ring-inner" />
+      <circle cx="360" cy="100" r="4" fill="var(--accent)" />
+    </g>
+    <g class="node node-primary" filter="url(#node-glow-soft)">
+      <circle cx="120" cy="300" r="12" fill="var(--accent-alt)" opacity="0.1" class="node-ring" />
+      <circle cx="120" cy="300" r="7" fill="var(--accent-alt)" opacity="0.2" class="node-ring-inner" />
+      <circle cx="120" cy="300" r="4" fill="var(--accent-alt)" />
+    </g>
+    <g class="node node-primary" filter="url(#node-glow-soft)">
+      <circle cx="370" cy="280" r="12" fill="var(--accent)" opacity="0.1" class="node-ring" />
+      <circle cx="370" cy="280" r="7" fill="var(--accent)" opacity="0.2" class="node-ring-inner" />
+      <circle cx="370" cy="280" r="4" fill="var(--accent)" />
+    </g>
+    <g class="node node-primary" filter="url(#node-glow-soft)">
+      <circle cx="240" cy="350" r="12" fill="var(--accent-alt)" opacity="0.1" class="node-ring" />
+      <circle cx="240" cy="350" r="7" fill="var(--accent-alt)" opacity="0.2" class="node-ring-inner" />
+      <circle cx="240" cy="350" r="4" fill="var(--accent-alt)" />
+    </g>
+
+    <!-- Outer/leaf nodes (smallest) -->
+    <g class="node node-leaf">
+      <circle cx="60" cy="60" r="3" fill="var(--accent)" opacity="0.5" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="80" cy="180" r="2.5" fill="var(--accent)" opacity="0.4" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="430" cy="40" r="3" fill="var(--accent)" opacity="0.5" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="420" cy="170" r="2.5" fill="var(--accent-alt)" opacity="0.4" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="50" cy="340" r="2.5" fill="var(--accent-alt)" opacity="0.35" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="440" cy="330" r="3" fill="var(--accent)" opacity="0.4" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="170" cy="420" r="2.5" fill="var(--accent-alt)" opacity="0.35" />
+    </g>
+    <g class="node node-leaf">
+      <circle cx="320" cy="430" r="3" fill="var(--accent)" opacity="0.4" />
+    </g>
+
+    <!-- Node labels (tiny, monospace) -->
+    <text x="240" y="170" text-anchor="middle" class="node-label label-hub">team-lead</text>
+    <text x="140" y="82" text-anchor="middle" class="node-label">onboarding-agent</text>
+    <text x="360" y="82" text-anchor="middle" class="node-label">support-agent</text>
+    <text x="108" y="325" text-anchor="middle" class="node-label">research-agent</text>
+    <text x="382" y="305" text-anchor="middle" class="node-label">erp-agent</text>
+    <text x="240" y="380" text-anchor="middle" class="node-label">reporting-agent</text>
+  </svg>
+</div>
+
+<style>
+  .hero-network {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 420px;
+    animation: networkFadeIn 800ms ease-out 400ms both;
+  }
+
+  @keyframes networkFadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 0.85; transform: translateX(0); }
+  }
+
+  .hero-network svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Node labels */
+  .node-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: var(--accent);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+  }
+
+  .node-label.label-hub {
+    font-size: 10px;
+    opacity: 0.8;
+    font-weight: 600;
+  }
+
+  /* === Pulse animations === */
+
+  /* Hub node: steady pulse */
+  .node-hub .node-ring {
+    animation: hubPulse 3s ease-in-out infinite;
+    transform-origin: 240px 200px;
+  }
+
+  .node-hub .node-ring-inner {
+    animation: hubPulseInner 3s ease-in-out infinite;
+    transform-origin: 240px 200px;
+  }
+
+  @keyframes hubPulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.4); opacity: 0.08; }
+  }
+
+  @keyframes hubPulseInner {
+    0%, 100% { transform: scale(1); opacity: 0.25; }
+    50% { transform: scale(1.2); opacity: 0.15; }
+  }
+
+  /* Primary nodes: staggered subtle pulse */
+  .node-primary .node-ring {
+    animation: nodePulse 4s ease-in-out infinite;
+  }
+
+  .node-primary:nth-child(8) .node-ring { animation-delay: 0s; }
+  .node-primary:nth-child(9) .node-ring { animation-delay: 0.8s; }
+  .node-primary:nth-child(10) .node-ring { animation-delay: 1.6s; }
+  .node-primary:nth-child(11) .node-ring { animation-delay: 2.4s; }
+  .node-primary:nth-child(12) .node-ring { animation-delay: 3.2s; }
+
+  @keyframes nodePulse {
+    0%, 100% { r: 12; opacity: 0.1; }
+    50% { r: 16; opacity: 0.05; }
+  }
+
+  /* Connection lines: subtle fade */
+  .conn {
+    animation: connFade 5s ease-in-out infinite;
+  }
+
+  .conn-outer {
+    animation-delay: 1s;
+  }
+
+  .conn-cross {
+    animation: connDash 8s linear infinite;
+  }
+
+  @keyframes connFade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes connDash {
+    to { stroke-dashoffset: -40; }
+  }
+
+  /* Leaf nodes: gentle twinkle */
+  .node-leaf circle {
+    animation: leafTwinkle 5s ease-in-out infinite;
+  }
+
+  .node-leaf:nth-child(13) circle { animation-delay: 0s; }
+  .node-leaf:nth-child(14) circle { animation-delay: 0.7s; }
+  .node-leaf:nth-child(15) circle { animation-delay: 1.4s; }
+  .node-leaf:nth-child(16) circle { animation-delay: 2.1s; }
+  .node-leaf:nth-child(17) circle { animation-delay: 2.8s; }
+  .node-leaf:nth-child(18) circle { animation-delay: 3.5s; }
+  .node-leaf:nth-child(19) circle { animation-delay: 4.2s; }
+  .node-leaf:nth-child(20) circle { animation-delay: 4.9s; }
+
+  @keyframes leafTwinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-network {
+      animation: none;
+      opacity: 0.85;
+    }
+
+    .node-hub .node-ring,
+    .node-hub .node-ring-inner,
+    .node-primary .node-ring,
+    .conn,
+    .conn-cross,
+    .node-leaf circle {
+      animation: none;
+    }
+
+    .hero-network circle[r="2"],
+    .hero-network circle[r="1.5"] {
+      display: none;
+    }
+  }
+
+  /* Hide on mobile — the hero goes single-column */
+  @media (max-width: 768px) {
+    .hero-network {
+      display: none;
+    }
+  }
+</style>
