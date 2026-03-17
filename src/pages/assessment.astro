@@ -52,13 +52,13 @@ const lang = 'en' as const;
     LEAD_SKIP: t(lang, 'assessment.lead.skip'),
   }}>
     // ── Configuration ──
-    var AGENT_API = 'http://100.73.44.17:3030/api/chat';
+    var AGENT_API = 'http://100.73.44.17:3030/api/agents/assessment/chat';
     var MAX_MESSAGES = 15;
     var MAX_INPUT_LENGTH = 2000;
 
     // ── State ──
     var sessionId = (crypto.randomUUID ? crypto.randomUUID() : ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, function(c) { return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16); }));
-    var messages = [];
+    var userMessageCount = 0;
     var isStreaming = false;
     var conversationDone = false;
     var assessmentStartTime = null;
@@ -199,15 +199,15 @@ const lang = 'en' as const;
     // ── Streaming chat ──
     async function sendMessage(text) {
       if (isStreaming || conversationDone) return;
-      if (messages.length >= MAX_MESSAGES) {
+      if (userMessageCount >= MAX_MESSAGES) {
         conversationDone = true;
         setInputEnabled(false);
         return;
       }
 
       text = text.slice(0, MAX_INPUT_LENGTH);
-      messages.push({ role: 'user', content: text });
-      if (messages.length === 1) {
+      userMessageCount++;
+      if (userMessageCount === 1) {
         assessmentStartTime = Date.now();
         if (typeof umami !== 'undefined') umami.track('assessment-started');
       }
@@ -222,7 +222,7 @@ const lang = 'en' as const;
         var res = await fetch(AGENT_API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-Session-ID': sessionId },
-          body: JSON.stringify({ messages: messages, lang: LANG })
+          body: JSON.stringify({ message: text, lang: LANG })
         });
 
         hideTyping();
@@ -254,15 +254,14 @@ const lang = 'en' as const;
                 bubble.innerHTML = renderMarkdown(fullText);
                 scrollToBottom();
               }
-              if (parsed.done) {
-                messages.push({ role: 'assistant', content: fullText });
-
-                if (parsed.assessment_complete) {
+              if (parsed.done !== undefined) {
+                // done field present = final SSE event with phase info
+                if (parsed.done === true) {
                   conversationDone = true;
                   setInputEnabled(false);
                   if (typeof umami !== 'undefined') {
                     var durationSec = assessmentStartTime ? Math.round((Date.now() - assessmentStartTime) / 1000) : 0;
-                    umami.track('assessment-completed', { turns: messages.length, duration_seconds: durationSec });
+                    umami.track('assessment-completed', { turns: userMessageCount * 2, duration_seconds: durationSec });
                   }
                   showLeadForm(fullText);
                 }
@@ -273,9 +272,7 @@ const lang = 'en' as const;
           }
         }
 
-        if (fullText && !messages.find(function (m) { return m.role === 'assistant' && m.content === fullText; })) {
-          messages.push({ role: 'assistant', content: fullText });
-        }
+        // History is managed server-side — no client-side accumulation needed
       } catch (err) {
         hideTyping();
         addMessage('agent', 'Sorry, I encountered an error. Please try again or contact us at contact@mi8.be.');
