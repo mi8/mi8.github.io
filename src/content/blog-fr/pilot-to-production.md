@@ -2,7 +2,7 @@
 title: "Du pilote à la production : faire passer votre programme d'agents IA à l'échelle"
 description: "Le premier agent a fonctionné. Et maintenant ? Voici comment passer d'un pilote réussi à un portefeuille d'agents qui gagnent en valeur."
 pubDate: 2026-04-13
-draft: true
+draft: false
 ---
 
 Le premier projet d'agent a réussi. Les métriques sont solides, l'équipe est embarquée, et la direction pose la question que vous attendiez : « Où d'autre peut-on faire ça ? »

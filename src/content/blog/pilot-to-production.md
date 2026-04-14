@@ -2,7 +2,7 @@
 title: "From Pilot to Production: Scaling Your AI Agent Program"
 description: "The first agent worked. Now what? Here's how to go from one successful pilot to a portfolio of agents that compound in value."
 pubDate: 2026-04-13
-draft: true
+draft: false
 ---
 
 The first agent project succeeded. The metrics are solid, the team is on board, and leadership is asking the question you've been waiting for: "Where else can we do this?"
