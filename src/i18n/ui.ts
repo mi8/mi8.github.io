@@ -108,6 +108,12 @@ export const ui = {
     'footer.vat': 'VAT BE 0535.711.105',
     'footer.copyright': '\u00a9 2026 mi8 SRL. All rights reserved.',
 
+    // Consent banner
+    'consent.message': 'We use cookies only to measure our advertising. You can decline\u2014our analytics stay cookieless either way.',
+    'consent.accept': 'Accept',
+    'consent.decline': 'Decline',
+    'consent.privacy': 'Privacy policy',
+
     // Blog listing page
     'blogPage.title': 'Blog \u2014 mi8',
     'blogPage.heading': 'Latest thinking',
@@ -245,6 +251,12 @@ export const ui = {
     'footer.address': 'Chauss\u00e9e de Namur 31/5, 1457 Walhain, Belgique',
     'footer.vat': 'TVA BE 0535.711.105',
     'footer.copyright': '\u00a9 2026 mi8 SRL. Tous droits r\u00e9serv\u00e9s.',
+
+    // Consent banner
+    'consent.message': 'Nous utilisons des cookies uniquement pour mesurer notre publicit\u00e9. Vous pouvez refuser\u2014nos statistiques restent sans cookie dans tous les cas.',
+    'consent.accept': 'Accepter',
+    'consent.decline': 'Refuser',
+    'consent.privacy': 'Politique de confidentialit\u00e9',
 
     // Blog listing page
     'blogPage.title': 'Blog \u2014 mi8',

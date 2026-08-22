@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import type { Lang } from '../i18n/ui';
 import { t } from '../i18n/ui';
 
@@ -79,6 +80,36 @@ const ogImage = image || new URL('/og-default.png', site).href;
 
     <script defer src="https://cloud.umami.is/script.js" data-website-id="566e78c4-5a75-47b0-a5b2-b5c94b2c0dbe"></script>
 
+    {import.meta.env.PROD && (
+      <>
+        {/* Google Consent Mode v2 — deny ad signals until the visitor opts in */}
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+          });
+          try {
+            if (localStorage.getItem('mi8-consent') === 'granted') {
+              gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted'
+              });
+            }
+          } catch (e) {}
+          gtag('js', new Date());
+          gtag('config', 'AW-18070492935');
+        </script>
+        {/* Google tag (gtag.js) */}
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18070492935"></script>
+      </>
+    )}
+
     <script is:inline>
       (function () {
         const theme = localStorage.getItem('theme') ||
@@ -110,5 +141,6 @@ const ogImage = image || new URL('/og-default.png', site).href;
   </head>
   <body>
     <slot />
+    <ConsentBanner lang={lang} />
   </body>
 </html>
