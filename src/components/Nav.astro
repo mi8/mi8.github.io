@@ -27,12 +27,10 @@ const sectionHref = (anchor: string) => isHome ? anchor : localePath(lang, '/' +
       <li><a href={sectionHref('#sovereignty')}>{t(lang, 'nav.approach')}</a></li>
       <li><a href={localePath(lang, '/blog')}>{t(lang, 'nav.blog')}</a></li>
       <li><a href={sectionHref('#contact')}>{t(lang, 'assessment.nav')}</a></li>
-      <li class="nav-links-cta"><a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a></li>
     </ul>
     <div class="nav-right">
       <LanguagePicker lang={lang} path={path} />
       <ThemeToggle />
-      <a href={localePath(lang, '/assessment')} class="btn btn-primary">{t(lang, 'nav.cta')}</a>
     </div>
   </div>
 </nav>
